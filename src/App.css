@@ -1,0 +1,1028 @@
+body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/**************ALIX*************************/
+
+@font-face {
+	font-family: "Circular";   /*Can be any text*/
+	src: local("CircularStd-Book"),
+	  url("./fonts/CircularStd-Book.ttf") format("truetype");
+}
+
+/*HOME*/
+.element-HOME {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.element-HOME .overlap-wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+
+}
+
+.element-HOME .overlap {
+  height: 100%;
+  position: relative;
+}
+
+.element-HOME .rectangle {
+  height:100% ;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+.element-HOME .promousonalogowhite {
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute; 
+}
+
+.element-HOME .HEADER {
+  background-color: white;
+  height: 7.59vh;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 15px 10px -15px #0000001a;
+}
+
+.element-HOME .overlap-group {
+  height: 79px;
+  position: relative;
+  top: 3px;
+  width: 1920px;
+}
+
+.element-HOME .div {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 20px #0000001a;
+  height: 75px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1920px;
+}
+
+.element-HOME .element-USONA-logo-high {
+  height: 100%;
+  left: 2vw;
+  position: absolute;
+}
+
+.element-HOME .EXPERIENCE {
+  position: absolute;
+  left: 22.86vw;
+  top: 18.60vw;
+  width: 16.56vw;
+  height: 34.63vw;
+}
+
+.element-HOME .overlap-2 {
+  background-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 2px 4px 4px #0000000d;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.element-HOME .EXPERIENCES {
+  height: 3.5%;
+  left: 17.5%;
+  position: absolute;
+  top: 5%;
+  width: 65%;
+}
+
+.element-HOME .ICON-EXP {
+  height: 25.34%;
+  left: 23.41%;
+  position: absolute;
+  top: 44.35%;
+  width: 53%;
+}
+
+.element-HOME .overlap-group-2 {
+  height: 100%;
+  left: 0%;
+  position: relative;
+  width: 100%;
+}
+
+.element-HOME .ellipse {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.element-HOME .element-RAIN-FOREST {
+  background-color: #fafafa00;
+  border-radius: 65.74px;
+  box-shadow: -5px 4px 4px #0000000d;
+  height: 75%;
+  left: 13.5;
+  position: absolute;
+  top: 12.5%;
+  width: 75%;
+}
+
+.element-HOME .LIGHTING {
+  height: 15.88vw;
+  left: 41.71%;
+  position: absolute;
+  top: 37.4vw;
+  width: 16.56vw;
+}
+
+.element-HOME .overlap-3 {
+  background-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 2px 4px 4px #0000000d;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.element-HOME .BRIGHTNESS-ICON {
+  height: 29.18%;
+  left: 37.65%;
+  object-fit: cover;
+  position: absolute;
+  top: 50.81%;
+  width: 24.68%;
+}
+
+.element-HOME .img {
+  height: 6.88%;
+  left: 27.5%;
+  position: absolute;
+  top: 12.13%;
+  width: 44.93%;
+}
+
+.element-HOME .line {
+  height: 1px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 30.81%;
+  width: 100%;
+}
+
+.element-HOME .AUDIO {
+  height: 15.88vw;
+  left: 60.5%;
+  position: absolute;
+  top: 18.60vw;
+  width: 16.56vw;
+}
+
+.element-HOME .overlap-4 {
+  background-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 2px 4px 4px #0000000d;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.element-HOME .VOLUME-ICON {
+  height: 30.81%;
+  left: 37.02%;
+  position: absolute;
+  top: 49.8%;
+  width: 26.26%;
+}
+
+.element-HOME .AUDIO-2 {
+  height: 6.88%;
+  left: 34.8%;
+  position: absolute;
+  top: 11.8%;
+  width: 30.06%;
+}
+
+.element-HOME .line-2 {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 93px;
+  width: 314px;
+}
+
+.element-HOME .MOTOR-SYSTEM {
+  height: 15.88vw;
+  left: 60.5%;
+  position: absolute;
+  top: 37.4vw;
+  width: 16.56vw;
+}
+
+.element-HOME .MOTOR-CONTROL-SYSTEM {
+  height: 19.34%;
+  left: 7.91%;
+  position: absolute;
+  top: 12.13%;
+  width: 81.01%;
+}
+
+.element-HOME .line-3 {
+  height: 1px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 43.6%;
+  width: 100%;
+}
+
+.element-HOME .noun-setting {
+  height: 26.55%;
+  left: 37.02%;
+  object-fit: cover;
+  position: absolute;
+  top: 58.36%;
+  width: 25.63%;
+}
+
+.element-HOME .EMOTIONAL {
+  height: 15.88vw;
+  left: 41.71%;
+  position: absolute;
+  top: 18.60vw;
+  width: 16.56vw;
+}
+
+.element-HOME .EMOTIONAL-VALENCE {
+  height: 19.34%;
+  left: 21.5%;
+  position: absolute;
+  top: 12.13%;
+  width: 57%;
+}
+
+.element-HOME .noun-flower-of-life {
+
+  left: 35.75%;
+  object-fit: cover;
+  position: absolute;
+  top: 57.04%;
+  width: 28.16%;
+}
+
+
+
+/*EXPERIENCES*/
+.element-PAGE {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.element-EXPERIENCES {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top:0px;
+  left:0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.element-EXPERIENCES .promousonalogowhite {
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute; 
+}
+
+.HEADER {
+  background-color: white;
+  height: 7.59vh;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 15px 10px -15px #0000001a;
+}
+
+.element-USONA-logo-high {
+  height: 100%;
+  left: 2vw;
+  position: absolute;
+}
+
+.element-EXPERIENCES .rectangle {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+
+.text-wrapper {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 30px;
+font-weight: 400;
+  position: absolute;
+  white-space: nowrap;
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+.element-EXPERIENCES .ellipse {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.element-EXPERIENCES .ellipseRot {
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0%;
+  width: 50%;
+  transform: scale(-1, 1);
+}
+
+.element-EXPERIENCES .img {
+  height: 100%;
+  left: 0%;
+  object-fit: cover;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.element-EXPERIENCES .btnimg {
+  height: 78.26%;
+  left: 10.86%;
+  object-fit: cover;
+  position: absolute;
+  top: 10.86%;
+  width: 78.26%;
+  border-radius: 50%;
+  background-color: #ff000000;
+  border: 0px;
+}
+
+.element-RAIN-FOREST {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 8.17%;
+  top: 16.67vh;
+  position: absolute; 
+}
+
+.element-EXPERIENCES .element-OCEAN {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 28.28%;
+  top: 16.67vh;
+  position: absolute;
+}
+
+.element-EXPERIENCES .element-MEDITATION {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 50.46%;
+  top: 16.67vh;
+  position: absolute;  
+}
+
+
+.element-EXPERIENCES .element-GALAXY {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 72.65%;
+  top: 16.67vh;
+  position: absolute; 
+}
+
+.element-EXPERIENCES .element-SPIRAL-RS {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 28.28%;
+  top: 56.67vh;
+  position: absolute; 
+}
+
+.element-EXPERIENCES .element-REACTIVE-SCENE {
+  width: 19.16vw;
+  height: 19.16vw;
+  left: 50.46%;
+  top: 56.67vh;
+  position: absolute;
+}
+
+/*EMOTIONAL VALENCE*/
+
+.element-EMOTIONAL-VALENCE {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  top:0px;
+  left:0px;
+  position: absolute;
+}
+
+.element-EMOTIONAL-VALENCE .overlap-wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.element-EMOTIONAL-VALENCE .promousonalogowhite {
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute; 
+}
+
+.element-EMOTIONAL-VALENCE .rectangle {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-EMOTIONAL-VALENCE .SETTINGS { 
+  left: 61.56vw;
+  top: 20vh;
+  position: absolute;
+  width: 24.74vw;
+  height: 63.38vh;
+}
+
+.element-EMOTIONAL-VALENCE .rectangle-2 {
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 4px 4px 20px #00000026;
+
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.element-EMOTIONAL-VALENCE .btnimg {
+  
+  object-fit: cover;
+  position: absolute;
+  align-items: center;
+  width: 19.78%;
+  height: 12%;
+  left: 40%;
+  top: 84%;
+  border-radius: 50%;
+  background-color: #ff000000;
+  border: 0px;
+  padding: 0;
+  margin: 0px;
+}
+
+.element-EMOTIONAL-VALENCE .PLAY-STOP {
+  background-color: #d9d9d92e;
+  border: 1px solid;
+  border-color: #0000001a;
+  border-radius: 47px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-EMOTIONAL-VALENCE .img {
+  object-fit: cover;
+  position: absolute;
+  top:25%;
+  left: 20%;
+}
+
+.element-EMOTIONAL-VALENCE .BRIGHTNESS {
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+}
+
+.element-EMOTIONAL-VALENCE .line-b{
+  position: absolute;
+  width: 100%;
+  top: 9%;
+}
+
+.element-EMOTIONAL-VALENCE .text-brightness{
+  position: relative;
+  width: 100%;
+  height: 9%;
+  text-align: center;
+  vertical-align: middle;
+}
+.element-EMOTIONAL-VALENCE .bright{
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+.element-EMOTIONAL-VALENCE .BRIGHTNESS-ICON {
+margin: auto;
+display: block;
+max-width: 30%;
+max-height: 30%;
+}
+
+.element-EMOTIONAL-VALENCE .SLIDER {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-height: 30%;
+  top:25%;
+  position: relative;
+}
+
+
+.element-EMOTIONAL-VALENCE .rectangle-3 {
+  height: 19px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 381px;
+}
+
+.element-EMOTIONAL-VALENCE .CURSEUR {
+  background-color: #f8f8f8;
+  border: 1px solid;
+  border-color: #0000000d;
+  border-radius: 14px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 28px;
+  left: 118px;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.element-EMOTIONAL-VALENCE .ellipse {
+  background-color: #d9d9d94c;
+  border: 1px solid;
+  border-color: #0000000d;
+  border-radius: 6px;
+  height: 12px;
+  left: 7px;
+  position: relative;
+  top: 7px;
+  width: 12px;
+}
+
+.element-EMOTIONAL-VALENCE .SPEED {
+  height: 121px;
+  left: 0px;
+  position: absolute;
+  top: 54%;
+  width: 100%;
+
+}
+
+.element-EMOTIONAL-VALENCE .overlap-group-wrapper {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-height: 30%;
+  top:65%;
+  position: relative;
+}
+
+.element-EMOTIONAL-VALENCE .ellipse-wrapper {
+  background-color: #f8f8f8;
+  border: 1px solid;
+  border-color: #0000000d;
+  border-radius: 14px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 28px;
+  left: 239px;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.element-EMOTIONAL-VALENCE .SPEED-ICON {
+  margin: auto;
+display: block;
+max-width: 30%;
+max-height: 30%;
+}
+
+.element-EMOTIONAL-VALENCE .line {
+  position: absolute;
+  width: 100%;
+  top: 41%;
+}
+.element-EMOTIONAL-VALENCE .line-s {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+.element-EMOTIONAL-VALENCE .text-speed{
+  position: relative;
+  width: 100%;
+  height: 9%;
+  top: 28.5%;
+  text-align: center;
+  vertical-align: middle;
+}
+.element-EMOTIONAL-VALENCE .speed_t{
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.element-EMOTIONAL-VALENCE .line-2 {
+  position: absolute;
+  width: 100%;
+  top: 80%;
+}
+
+.element-EMOTIONAL-VALENCE .EMOTIONAL-CIRCLE {
+  width: 42.96vw;
+  height: 42.96vw;
+  left: 11.35vw;
+  top: 15vh;
+  position: absolute;
+}
+
+.element-EMOTIONAL-VALENCE .overlap-2 {
+  background-color: #ffffff;
+  border-radius: 412.5px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.element-EMOTIONAL-VALENCE .FLOWER-OF-LIFE {
+  
+  left: 8px;
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 98.18%;
+  height:  98.18%;
+}
+
+.element-EMOTIONAL-VALENCE .line-3 {
+  height: 62.78%;
+  position: absolute;
+  width: 62.78%;
+  left:18.6%;
+  top:18.6%;
+}
+
+.element-EMOTIONAL-VALENCE .line-4 {
+  height: 62.78%;
+  position: absolute;
+  width: 62.78%;
+  left:18.6%;
+  top:18.6%;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-2 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 43%;
+  top: 7.15%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-3 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 44%;
+  top: 87.6%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-4 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 57.12%;
+  top: 15.63%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-5 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 6%;
+  top: 47%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-6 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 13%;
+  top: 36%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-7 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 82%;
+  top: 36%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-8 {
+  color: #87a0dc;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 70%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 22.9%;
+  transform: rotate(-45deg);
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-9 {
+  color: #87a0dc;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 70%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 71%;
+  transform: rotate(45deg);
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-10 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 9%;
+  top: 59%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-11 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 81%;
+  top: 59%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-12 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 80%;
+  top: 47%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-13 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 58%;
+  top: 80%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-14 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 31%;
+  top: 15.63%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.element-EMOTIONAL-VALENCE .text-wrapper-15 {
+  color: #a3b986;
+  font-family: "Circular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 31%;
+  top: 80%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+}
+
+
+/* Gradient Range Slider */
+#range-slider-gradient {
+  height: 24px;
+  border-radius: 12px;
+  background: #353644;
+}
+
+#range-slider-gradient .range-slider__thumb {
+  border: 6px solid #fff;
+  box-sizing: border-box;
+}
+
+#range-slider-gradient .range-slider__thumb[data-lower] {
+  background: #0073e6;
+}
+
+#range-slider-gradient .range-slider__thumb[data-upper] {
+  background: #ee2c2c;
+}
+
+#range-slider-gradient .range-slider__range {
+  background: linear-gradient(to right, #0073e6, #ee2c2c);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+}
+
+#range-slider-gradient .range-slider__range[data-active],
+#range-slider-gradient .range-slider__thumb[data-active]~.range-slider__range {
+  animation: move-bg 0.75s infinite linear;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 50% 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 50% 0;
+  }
+
+  75% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 50% 0;
+  }
+}
+
+/* SLIDERS*/
+
+/*BRIGHTNESS*/
+.b_slider .range-slider__thumb[data-lower] {
+  width: 0;
+}
+
+.b_slider .range-slider__thumb[data-upper] {
+  border: 7px solid #F8F8F8;
+  width: 9px;
+  height: 9px;
+}
+
+.b_slider {
+  background: linear-gradient(to right, #ffffff, #EAF5E2, #D0E2FF);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 14px;
+  border-radius: 15px;
+}
+
+.b_slider .range-slider__range {
+  background: #00000000;
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 15px;
+  border-radius: 15px;
+}
+
+.b_slider .range-slider__thumb[data-upper] {
+  background: #e3e3e38a;
+}
+
+/*SPEED*/
+.s_slider .range-slider__thumb[data-lower] {
+  width: 0;
+}
+
+.s_slider .range-slider__thumb[data-upper] {
+  border: 7px solid #F8F8F8;
+  width: 9px;
+  height: 9px;
+}
+
+.s_slider {
+  background: linear-gradient(to right, #D8EFF2, #C9CCE5, #FDEBF3, #FFE6CE);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 14px;
+  border-radius: 15px;
+}
+
+.s_slider .range-slider__range {
+  background: #00000000;
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 24px;
+  border-radius: 15px;
+}
+
+.s_slider .range-slider__thumb[data-upper] {
+  background: #e3e3e38a;
+}
