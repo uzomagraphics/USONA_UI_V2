@@ -53,11 +53,15 @@ function App() {
   const [open, setOpen] = useState(false);
   const parentRef = React.useRef(null);
 
-  useEffect(() => {
-    if (parentRef.current) {
-      autoAnimate(parentRef.current);
-    }
-  }, [parentRef]);
+useEffect(() => {
+  if (parentRef.current) {
+    const elements = parentRef.current.querySelectorAll('[data-auto-animate]');
+    elements.forEach((element) => {
+      element.style.transitionDuration = '0s';
+    });
+    autoAnimate(parentRef.current);
+  }
+}, [parentRef]);
 
   const showMore = () => setOpen(!open);
   //////////////////////
@@ -711,15 +715,14 @@ function App() {
           <div className='audio-text'>AUDIO</div>
         </div>
 
-        <div className="PLAY-STOP">
-          <button  className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause()}}>
-            {Audioplay_pause == 'play' ?  <img className="img2" alt="Play STOP" src={require('./assets/Play.png')}/>: <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')}/>}
-          </button>
-        </div>
-
         <div className="VOLUME">
-          <img className="VOLUME-ICON" alt="Volume ICON" src={require('./assets/VOLUMEICON.png')} />
-          <div className="SLIDER">
+          <div className='volume-icon-wrapper' >
+            <img className="VOLUME-ICON" alt="Volume ICON" src={require('./assets/VOLUMEICON.png')} />
+          </div>
+
+          <div className='slider-wrapper' >
+            <div className="SLIDER">
+          </div>
             <div className="overlap-group-2">
               <RangeSlider
                 className="a_slider"
@@ -736,47 +739,167 @@ function App() {
         <img className="line" alt="Line" src={require('./assets/LineAudio1.png')} />
         <img className="line-2" alt="Line" src={require('./assets/LineAudio2.png')} />
         <img className="line-3" alt="Line" src={require('./assets/LineAudio2.png')} />
-        <div ref={parentRef}>
-          {!open && (
-            <img className="SONG-ICON" alt="Song ICON" src={require('./assets/SONGICON.png')} onClick={showMore}/>
-          )}
+        <div className='song-icon-wrapper' ref={parentRef}>
+          {!open ? 
+          (
+            <div>
+              <div className='icon-wrapper'>
+                <img className="SONG-ICON" alt="Song ICON" src={require('./assets/SONGICON.png')} onClick={showMore}/>
+                <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
+              </div>
+              <div className='song-wrapper'>
+                <div className="SONG">Source select:</div>
+              </div>
+          </div>
+          ) 
+          : 
+          (
+            <div className="INPUT-SOURCE">
+              <div className='top'>
+                <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
+                <img className="BACK" alt="Back" src={require('./assets/BACK.png')} onClick={showMore}/>
+              </div>
+              <div className='bottom'>
+              <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
+              {source == 1 ? <div className="rectangle-4" /> : null}
+              <div className="rectangle-4btn" onClick={e => {setSource((prevSource) =>1); changeSource(1)}}>
+                <div className="text-wrapper-2">Source 01 - Title</div>
+                <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+              </div>
+              {source == 2 ? <div className="rectangle-5" /> : null}
+              <div className="rectangle-5btn" onClick={e => {setSource((prevSource) =>2); changeSource(2)}}>
+                <div className="text-wrapper-2">Source 02 - Title</div>
+                <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+              </div>
+              {source == 3 ? <div className="rectangle-6" /> : null}
+              <div className="rectangle-6btn" onClick={e => {setSource((prevSource) =>3); changeSource(3)}}>
+                <div className="text-wrapper-2">Source 03 - Title</div>
+                <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+              </div>
+              {source == 4 ? <div className="rectangle-7" /> : null}
+              <div className="rectangle-7btn" onClick={e => {setSource((prevSource) =>4); changeSource(4)}}>
+                <div className="text-wrapper-2">Source 04 - Title</div>
+                <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+              </div>
+              {source == 5 ? <div className="rectangle-8" /> : null}
+              <div className="rectangle-8btn" onClick={e => {setSource((prevSource) =>5); changeSource(5)}}>
+                <div className="text-wrapper-2">Source 05 - Title</div>
+              </div>
+              
+            </div>
+            </div>
+          )
+          }
+          <div className="PLAY-STOP">
+          <button  className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause()}}>
+            {Audioplay_pause == 'play' ?  <img className="img2" alt="Play STOP" src={require('./assets/Play.png')}/>: <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')}/>}
+          </button>   
+        </div>
         </div>
 
       </div>
 
-      {open && (
-        <div className="INPUT-SOURCE">
-          <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
-          <img className="BACK" alt="Back" src={require('./assets/BACK.png')} onClick={showMore}/>
-          {source == 1 ? <div className="rectangle-4" /> : null}
-          <div className="rectangle-4btn" onClick={e => {setSource((prevSource) =>1); changeSource(1)}}>
-            <div className="text-wrapper-2">Source 01 - Title</div>
-          </div>
-          {source == 2 ? <div className="rectangle-5" /> : null}
-          <div className="rectangle-5btn" onClick={e => {setSource((prevSource) =>2); changeSource(2)}}>
-            <div className="text-wrapper-3">Source 02 - Title</div>
-          </div>
-          {source == 3 ? <div className="rectangle-6" /> : null}
-          <div className="rectangle-6btn" onClick={e => {setSource((prevSource) =>3); changeSource(3)}}>
-            <div className="text-wrapper-4">Source 03 - Title</div>
-          </div>
-          {source == 4 ? <div className="rectangle-7" /> : null}
-          <div className="rectangle-7btn" onClick={e => {setSource((prevSource) =>4); changeSource(4)}}>
-            <div className="text-wrapper-5">Source 04 - Title</div>
-          </div>
-          <img className="line-3" alt="Line" src={require('./assets/Line4.png')} />
-          <img className="line-4" alt="Line" src={require('./assets/Line4.png')} />
-          <img className="line-5" alt="Line" src={require('./assets/Line4.png')} />
-          <img className="line-6" alt="Line" src={require('./assets/Line4.png')} />
-        </div>
-      )}
+      
 
     </div>
   </div>
 
 </SwiperSlide>
 
+<SwiperSlide>
 
+<div className="element-LIGHTNING">
+
+      <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')}/>
+        <div className="rectangle" />
+
+        <header className="HEADER">
+      <img
+        className="element-USONA-logo-high"
+        alt="Element USONA logo high"
+        src={require('./assets/Logo.png')}
+      />
+      <div className="text-wrapper">LIGHTING</div>
+    </header>
+
+        <div className="SETTINGS swiper-no-swiping">
+          <div className="overlap-2">
+            <div className="rectangle-2" />
+             
+           </div>
+
+           <div className="MOTOR-CONTROL swiper-no-swiping">
+
+            <div className='top'>
+              <div className='top-text'>
+                <p className='blinds-text'>BLINDS</p>
+              </div>
+            </div>
+
+            <div className='bottom'>
+            <img className="line" alt="Line" src={require('./assets/Line1Light.png')}/>
+            <img className="line-bottom" alt="Line" src={require('./assets/Line1Light.png')}/>
+              
+              <div className="UP-DOWN">
+                <div className='UP-DOWN2' onClick={e => {setBlinds(blinds <= 0.9 ? blinds + 0.1 : 1); changeBlinds(blinds <= 0.9 ? blinds + 0.1 : 1)}}>
+                  <img className="UP" alt="Up" src={require('./assets/UP.png')}/>
+                </div>
+                <div className='UP-DOWN1' onClick={e => {setBlinds(blinds => 0.1 ? blinds - 0.1 : 0); changeBlinds(blinds >= 0.1 ? blinds - 0.1 : 0)}}>
+                  <img className="DOWN" alt="Down" src={require('./assets/DOWN.png')}/>
+                </div>
+                <img className="line-2" alt="Line" src={require('./assets/Line8Light.png')} />
+              </div>
+
+              <img className="OPEN" onClick={e => {setBlinds(0); changeBlinds(0)}} src={require('./assets/OPEN.png')}/>
+              
+              <img className="HALF-OPEN" onClick={e => {setBlinds(0.5); changeBlinds(0.5)}}  src={require('./assets/HALFOPEN.png')}/>
+                  
+              <img className="CLOSE" onClick={e => {setBlinds(1); changeBlinds(1)}} src={require('./assets/CLOSE.png')}/>
+
+            </div>
+          </div>
+
+          <div className='abajo'>
+            <div className='abajo-up'>
+            <img className="line-abajo-up" alt="Line" src={require('./assets/Line1Light.png')}/>
+            </div>
+            <div className='abajo-down'>
+              <div className="ON-OFF" onClick={e => {setOnOff(onOff == 'ON' ? 'OFF' : 'ON'); changeOnOff()}}>
+              <img className="line2" alt="Line" src={require('./assets/Line1Light.png')} />
+                <div className="overlap-group">
+                  {onOff == 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                </div>
+              <div className="text-wrapper">ON/OFF</div>
+            </div>
+
+            <div className="BRIGHTNESS swiper-no-swiping">
+          <img className="BRIGHTNESS-ICON" alt="Brightness ICON" src={require('./assets/BRIGHTNESSICONLight.png')} />
+          <div className="SLIDER">
+            <div className="overlap-group-2">
+              <RangeSlider
+                className="b_slider"
+                defaultValue={[0, 1]}
+                thumbsDisabled={[true, false]}
+                rangeSlideDisabled={true}
+                value = {lightBrightness}
+                onInput={e => {setLightBrightness(e); changeLightBrightness()}}
+              />
+            </div>
+          </div>
+        </div>
+        
+          </div>
+        
+      </div>
+
+         </div>
+      
+           
+
+      </div>
+    
+
+</SwiperSlide>
 
 
 
