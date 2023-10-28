@@ -1387,12 +1387,13 @@ top: 32%;
 .element-LIGHTNING .text-wrapper {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 30px;
+  font-size: 10px;
   font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 2vw;
-  top: 50%;
+  top: 40%;
+  left: 35%;
   transform: translateY(-50%);
 }
 .element-LIGHTNING .textLight {
@@ -1537,6 +1538,7 @@ white-space: nowrap;
 }
 
 .element-LIGHTNING .ON-OFF {
+  background-color: #00000000;
   height: 100%;
   left: 67%;
   position: absolute;
@@ -1546,8 +1548,13 @@ white-space: nowrap;
 
 .element-LIGHTNING .overlap-group {
   position: absolute;
-  background-color: #ff0101;
-  width: 100%;
+  scale: 70%;
+}
+
+.element-LIGHTNING .on-off-btn {
+  position: absolute;
+  top: 30%;
+  left: 28%;
 }
 
 .element-LIGHTNING .BRIGHTNESS {
@@ -1693,7 +1700,6 @@ white-space: nowrap;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 0;
   white-space: nowrap;
 }
 
@@ -1856,6 +1862,652 @@ white-space: nowrap;
   top: 28px;
   width: 66px;
 }
+
+/************MOTOR CONTROL*************/
+.element-MOTOR-CONTROL {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top:0px;
+  left:0px;
+  height: 60vw;
+  width: 100vw;
+}
+
+.element-MOTOR-CONTROL .promousonalogowhite {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-MOTOR-CONTROL .rectangle {
+  background-color: #d0e2ff33;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-MOTOR-CONTROL .HEADER {
+  background-color: white;
+  height: 4vw;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 15px 10px -15px #0000001a;
+}
+
+.element-MOTOR-CONTROL .div {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 20px #0000001a;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -100%;
+  width: 100%;
+}
+
+.element-MOTOR-CONTROL .element-USONA-logo-high {
+  height: 100%;
+  left: 2vw;
+  position: absolute;
+}
+
+.element-MOTOR-CONTROL .text-wrapper {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 10px;
+  font-weight: 400;
+  position: absolute;
+  white-space: nowrap;
+  right: 2vw;
+  top: 40%;
+  left: 35%;
+  transform: translateY(-50%);
+}
+
+
+.element-MOTOR-CONTROL .div {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 20px #0000001a;
+  height: 75px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1920px;
+}
+
+
+
+
+.element-MOTOR-CONTROL .SETTINGS {
+  height: 606px;
+  left: 235px;
+  position: absolute;
+  top: 280px;
+  width: 1431px;
+}
+
+.element-MOTOR-CONTROL .overlap-2 {
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 4px 4px 20px #00000026;
+  height: 606px;
+  position: relative;
+  width: 1427px;
+}
+
+.element-MOTOR-CONTROL .overlap-group-2 {
+  height: 604px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 1427px;
+}
+
+.element-MOTOR-CONTROL .line {
+  height: 604px;
+  left: 714px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.element-MOTOR-CONTROL .img {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 110px;
+  width: 1427px;
+}
+
+.element-MOTOR-CONTROL .text-wrapper-2 {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 225px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 37px;
+  white-space: nowrap;
+}
+
+.element-MOTOR-CONTROL .text-wrapper-3 {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 1012px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 37px;
+  white-space: nowrap;
+}
+
+.element-MOTOR-CONTROL .MOTOR-CONTROL {
+  height: 284px;
+  left: 91px;
+  position: absolute;
+  top: 209px;
+  width: 533px;
+}
+
+.element-MOTOR-CONTROL .UP-DOWN {
+  background-color: #d9d9d92e;
+  border: 1px solid;
+  border-color: #0000001a;
+  border-radius: 30px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 122px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 91px;
+}
+
+.element-MOTOR-CONTROL .UP-DOWN1 {
+  background-color: #0066ff00;
+  border: 1px solid;
+  border-color: #00000000;
+  border-radius: 0px 0px 30px 30px;
+  height: 61px;
+  left: 0;
+  position: absolute;
+  top: 61px;
+  width: 91px;
+}
+
+.element-MOTOR-CONTROL .UP-DOWN2 {
+  background-color: #ff000000;
+  border: 1px solid;
+  border-color: #00000000;
+  border-radius: 30px 30px 0px 0px;
+  height: 61px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 91px;
+}
+
+.element-MOTOR-CONTROL .UP {
+  height: 37px;
+  left: 32px;
+  position: absolute;
+  top: 10px;
+  width: 26px;
+}
+
+.element-MOTOR-CONTROL .DOWN {
+  height: 37px;
+  left: 32px;
+  position: absolute;
+  top: 10px;
+  width: 26px;
+}
+
+.element-MOTOR-CONTROL .line-2 {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 59px;
+  width: 89px;
+}
+
+.element-MOTOR-CONTROL .POSITION {
+  background-color: #d9d9d900;
+  border: 0px solid;
+  border-color: #00000000;
+  border-radius: 30px;
+  box-shadow: 1px 2px 4px #00000000;
+  height: 122px;
+  left: 116px;
+  position: absolute;
+  top: 0;
+  width: 121px;
+}
+
+.element-MOTOR-CONTROL .POSITIONbtn {
+
+  border-radius: 30px;
+  height: 130px;
+  left: 0px;
+  position: absolute;
+  top: 0;
+  width: 130px;
+}
+
+.element-MOTOR-CONTROL .rectangle-2 {
+  height: 11px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 29px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .rectangle-3 {
+  border: 0.5px solid;
+  border-color: #00000066;
+  border-radius: 100px;
+  height: 11px;
+  left: 21px;
+  position: absolute;
+  top: 55px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .rectangle-4 {
+  border: 0.5px solid;
+  border-color: #00000066;
+  border-radius: 100px;
+  height: 11px;
+  left: 21px;
+  position: absolute;
+  top: 80px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .POSITION-2 {
+  background-color: #d9d9d900;
+  border: 1px solid;
+  border-color: #00000000;
+  border-radius: 30px;
+  box-shadow: 1px 2px 4px #00000000;
+  height: 122px;
+  left: 264px;
+  position: absolute;
+  top: 0;
+  width: 121px;
+}
+
+.element-MOTOR-CONTROL .rectangle-5 {
+  height: 11px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 55px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .rectangle-6 {
+  border: 0.5px solid;
+  border-color: #00000066;
+  border-radius: 100px;
+  height: 11px;
+  left: 21px;
+  position: absolute;
+  top: 29px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .POSITION-3 {
+  background-color: #d9d9d900;
+  border: 1px solid;
+  border-color: #00000000;
+  border-radius: 30px;
+  box-shadow: 1px 2px 4px #00000000;
+  height: 122px;
+  left: 412px;
+  position: absolute;
+  top: 0;
+  width: 121px;
+}
+
+.element-MOTOR-CONTROL .rectangle-7 {
+  height: 11px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 80px;
+  width: 78px;
+}
+
+.element-MOTOR-CONTROL .EMERGENCY-STOP {
+  background-color: #d9d9d92e;
+  border: 1px solid;
+  border-color: #0000001a;
+  border-radius: 47px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 94px;
+  left: 228px;
+  position: absolute;
+  top: 190px;
+  width: 94px;
+}
+
+.element-MOTOR-CONTROL .rectangle-8 {
+  border: 1.5px solid;
+  border-color: #00000033;
+  height: 33px;
+  left: 21px;
+  position: relative;
+  top: 0px;
+  width: 33px;
+}
+
+.element-MOTOR-CONTROL .SYSTEM {
+  height: 157px;
+  left: 982px;
+  position: absolute;
+  top: 249px;
+  width: 175px;
+}
+
+.element-MOTOR-CONTROL .REBOOT {
+  background-color: #d9d9d92e;
+  border: 1px solid;
+  border-color: #0000001a;
+  border-radius: 47px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 94px;
+  left: 41px;
+  position: absolute;
+  top: 63px;
+  width: 94px;
+}
+
+.element-MOTOR-CONTROL .POWER {
+  height: 45px;
+  left: 26px;
+  object-fit: cover;
+  position: absolute;
+  top: 23px;
+  width: 41px;
+}
+
+.element-MOTOR-CONTROL .TD-STATUS {
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 177px;
+}
+
+.element-MOTOR-CONTROL .touch-designer {
+  color: #000000;
+  font-family: "Circular Std-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.element-MOTOR-CONTROL .span {
+  color: #000000;
+  font-family: "Circular Std-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.element-MOTOR-CONTROL .text-wrapper-4 {
+  font-family: "Circular Std-Light", Helvetica;
+  font-weight: 300;
+}
+
+.element-MOTOR-CONTROL .ellipse {
+  background-color: #00ff44;
+  border-radius: 4.5px;
+  height: 9px;
+  left: 166px;
+  position: absolute;
+  top: 3px;
+  width: 9px;
+}
+.element-MOTOR-CONTROL .ellipse2 {
+  background-color: #ff0000;
+  border-radius: 4.5px;
+  height: 9px;
+  left: 166px;
+  position: absolute;
+  top: 3px;
+  width: 9px;
+}
+
+/**********LOGIN**********/
+.element-LOGIN {
+  background-color: #f50101;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 60vw;
+}
+
+.element-LOGIN .overlap-wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+}
+
+.element-LOGIN .overlap {
+  background-image: url(./assets/PromoUSONA.png);
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative;
+}
+
+.element-LOGIN .rectangle {
+  background-color: #d0e2ff33;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.element-LOGIN .rectangleW {
+  background-color: #ffffff;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.element-LOGIN .div {
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 4px 4px 20px #00000026;
+  height: 60%;
+  left: 30%;
+  position: absolute;
+  top: 20.37%;
+  width: 40%;
+}
+
+.element-LOGIN .form {
+  height: 60%;
+  left: 30%;
+  position: absolute;
+  top: 20.37%;
+  width: 40%;
+}
+
+.element-LOGIN .PASSWORD {
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 326px;
+}
+
+.element-LOGIN .overlap-group {
+  color: #302e4999;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+
+  letter-spacing: 0;
+  line-height: normal;
+
+  white-space: nowrap;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 64px;
+  left: 0;
+  position: absolute;
+  top: 46px;
+  width: 324px;
+  border: 1px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(135, 200, 220), rgb(163, 185, 134)) 1;
+}
+
+.element-LOGIN .PASSWORD-EYE {
+  height: 50px;
+  left: 277px;
+  position: absolute;
+  top: 60px;
+  width: 40px;
+}
+
+.element-LOGIN .text-wrapper {
+  color: #302e4999;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 108px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.element-LOGIN .LOGIN {
+  height: 110px;
+  left: 799px;
+  position: absolute;
+  top: 455px;
+  width: 326px;
+}
+
+.element-LOGIN .text-wrapper-2 {
+  color: #302e4999;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 130px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.element-LOGIN .rectangle-2 {
+  color: #302e4999;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+
+  letter-spacing: 0;
+  line-height: normal;
+
+  white-space: nowrap;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(135, 200, 220), rgb(163, 185, 134)) 1;
+  border-radius: 20px;
+  height: 64px;
+  left: 0;
+  position: absolute;
+  top: 46px;
+  width: 324px;
+  text-align: center;
+}
+
+.element-LOGIN .ENTER {
+  background-image: url(./assets/Rectangle19.png);
+  height: 52px;
+  left: 918px;
+  position: absolute;
+  top: 771px;
+  width: 87px;
+}
+.element-LOGIN .submitbtn {
+  background-color: #ffffff4c;
+  border-color: #00000000;
+  height: 52px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 88px;
+  border-radius: 30px;
+}
+
+.element-LOGIN .div-wrapper {
+  background-color: #00000005;
+  border-radius: 100px;
+  height: 52px;
+  position: relative;
+  width: 86px;
+}
+
+.element-LOGIN .text-wrapper-3 {
+  color: #00000080;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  white-space: nowrap;
+}
+
+.element-LOGIN .element-USONA-logo-high {
+  height: 82px;
+  left: 801px;
+  position: absolute;
+  top: 308px;
+  width: 322px;
+}
+.element-MOTOR-CONTROL .rectangle-3 {
+  height: 1080px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 1919px;
+  }
 
 /* Gradient Range Slider */
 #range-slider-gradient {

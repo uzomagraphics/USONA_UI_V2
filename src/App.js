@@ -493,7 +493,7 @@ useEffect(() => {
         </div>
 
         <div className="LIGHTING">
-          <div className="overlap-3">
+          <div className="overlap-3" onClick={e => { swiper.slideTo(4); }}>
             <img className="BRIGHTNESS-ICON" alt="Brightness ICON" src={require('./assets/BRIGHTNESSICON2.png')} />
             <img className="img" alt="Lightingimg" src={require('./assets/LIGHTING.png')} />
             <img className="line" alt="Line" src={require('./assets/Line1.png')} />
@@ -509,15 +509,15 @@ useEffect(() => {
         </div>
 
         <div className="MOTOR-SYSTEM">
-          <div className="overlap-3">
+          <div className="overlap-3" onClick={e => { swiper.slideTo(5); }}>
             <img className="MOTOR-CONTROL-SYSTEM" alt="Motor CONTROL SYSTEM" src={require('./assets/MOTORCONTROLSYSTEM.png')} />
             <img className="line-3" alt="Line" src={require('./assets/Line1.png')} />
             <img className="noun-setting" alt="Noun setting" src={require('./assets/noun-setting.png')} />
           </div>
         </div>
 
-        <div className="EMOTIONAL" onClick={e => { swiper.slideTo(2); }}>
-          <div className="overlap-3">
+        <div className="EMOTIONAL">
+          <div className="overlap-3" onClick={e => { swiper.slideTo(2); }}>
             <img className="EMOTIONAL-VALENCE" alt="Emotional VALENCE" src={require('./assets/EMOTIONALVALENCE.png')} />
             <img className="line-3" alt="Line" src={require('./assets/Line1.png')}  />
             <img className="noun-flower-of-life" alt="Noun flower of life" src={require('./assets/flower-of-life.png')} />
@@ -861,14 +861,20 @@ useEffect(() => {
 
           <div className='abajo'>
             <div className='abajo-up'>
+            <div className='top-text'>
+                <p className='blinds-text'>LIGHTS</p>
+              </div>
             <img className="line-abajo-up" alt="Line" src={require('./assets/Line1Light.png')}/>
             </div>
             <div className='abajo-down'>
-              <div className="ON-OFF" onClick={e => {setOnOff(onOff == 'ON' ? 'OFF' : 'ON'); changeOnOff()}}>
+              <div className="ON-OFF">
               <img className="line2" alt="Line" src={require('./assets/Line1Light.png')} />
-                <div className="overlap-group">
-                  {onOff == 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                <div className='on-off-btn' onClick={e => {setOnOff(onOff == 'ON' ? 'OFF' : 'ON'); changeOnOff()}}>
+                  <div className="overlap-group">
+                    {onOff == 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                  </div>
                 </div>
+                
               <div className="text-wrapper">ON/OFF</div>
             </div>
 
@@ -887,7 +893,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        
+
           </div>
         
       </div>
@@ -901,7 +907,121 @@ useEffect(() => {
 
 </SwiperSlide>
 
+<SwiperSlide>
 
+
+
+  <div className="element-MOTOR-CONTROL">
+
+        <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
+        <div className="rectangle" />
+
+        <header className="HEADER">
+          <img
+            className="element-USONA-logo-high"
+            alt="Element USONA logo high"
+            src={require('./assets/Logo.png')}
+          />
+          <div className="text-wrapper">MOTOR CONTROL</div>
+        </header>
+
+        <div className="SETTINGS">
+          <div className="overlap-2">
+            <div className="overlap-group-2">
+              <img className="line" alt="Line" src={require('./assets/Line2Motor.png')} />
+              <img className="img" alt="Line" src={require('./assets/Line3Motor.png')} />
+            </div>
+            <div className="text-wrapper-2">MOTOR CONTROL</div>
+            <div className="text-wrapper-3">SYSTEM</div>
+
+            <div className="MOTOR-CONTROL">
+
+            <div className="UP-DOWN">
+                <div className='UP-DOWN2' onClick={e => {setMotor(motor <= 0.9 ? motor + 0.1 : 1); changeMotor(motor <= 0.9 ? motor + 0.1 : 1)}}>
+                  <img className="UP" alt="Up" src={require('./assets/UP.png')}/>
+                </div>
+                <div className='UP-DOWN1' onClick={e => {setMotor(motor => 0.1 ? motor - 0.1 : 0); changeMotor(motor >= 0.1 ? motor - 0.1 : 0)}}>
+                  <img className="DOWN" alt="Down" src={require('./assets/DOWN.png')}/>
+                </div>
+              <img className="line-2" alt="Line" src={require('./assets/Line8Light.png')} />
+            </div>
+
+              <button className="POSITION" onClick={e => {setMotor(0); changeMotor(0)}}>
+                <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION01.png')} />
+              </button>
+
+              <button className="POSITION-2" onClick={e => {setMotor(0.5); changeMotor(0.5)}}>
+                <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION02.png')} />
+              </button>
+
+              <button className="POSITION-3" onClick={e => {setMotor(1); changeMotor(1)}}>
+                <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION03.png')} />
+              </button>
+
+              <button className="EMERGENCY-STOP" onClick={e => {sendEmergencyStop()}}>
+                <div className="rectangle-8" />
+              </button>
+
+            </div>
+
+            <div className="SYSTEM">
+              <div className="REBOOT" onClick={e => {sendReboot()}}>
+                <img className="POWER" alt="Power" src={require('./assets/POWER.png')} />
+              </div>
+              <div className="TD-STATUS">
+                <p className="touch-designer">
+                  <span className="span">Touch Designer :</span>
+                  <span className="text-wrapper-4"> Active</span>
+                </p>
+                {td == 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {login =='correct' ? null :
+         <div className="element-LOGIN">
+   
+      <div className="overlap-wrapper">
+        <div className="overlap">
+
+          <div className="rectangleW" />
+          <div className="rectangle" />
+          <div className="overlap" />
+          <div className="div" />
+
+        <form className='form' onSubmit={handleSubmit}>
+          <div className="PASSWORD">
+            <div >
+            <input className="overlap-group" value={password} type="password" name="pass" required onChange={e => {setPassword(e.target.value)}}/>
+              <img className="PASSWORD-EYE" alt="Password EYE" src={require('./assets/PASSWORDEYE.png')} />
+            </div>
+            <div className="text-wrapper">Password</div>
+          </div>
+          <div className="LOGIN">
+            <div className="text-wrapper-2">Login</div>
+            <input className="rectangle-2" value={userName} type="text" name="uname" required onChange={e => {setUserName(e.target.value)}}/>
+          </div>
+          <div className="ENTER">
+            <div className="div-wrapper" >
+              <button className='submitbtn' type="submit">
+              <div className="text-wrapper-3">ENTER</div>
+              </button>
+            </div>
+          </div>
+        </form>
+
+          <img className="element-USONA-logo-high" alt="Element USONA logo high" src={require('./assets/Logo.png')} />
+        </div>
+      </div>
+    </div>
+    }
+
+     
+  </div>
+
+</SwiperSlide>
 
 
 
