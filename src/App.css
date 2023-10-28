@@ -19,7 +19,7 @@ body {
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 60vw;
 }
 
 .element-HOME .overlap-wrapper {
@@ -52,18 +52,13 @@ body {
 
 .element-HOME .HEADER {
   background-color: white;
-  height: 7.59vh;
+  height: 4vw;
   position: absolute;
   width: 100%;
   box-shadow: 0px 15px 10px -15px #0000001a;
 }
 
-.element-HOME .overlap-group {
-  height: 79px;
-  position: relative;
-  top: 3px;
-  width: 1920px;
-}
+
 
 .element-HOME .div {
   background-color: #ffffff;
@@ -84,7 +79,7 @@ body {
 .element-HOME .EXPERIENCE {
   position: absolute;
   left: 22.86vw;
-  top: 18.60vw;
+  top: 15vw;
   width: 16.56vw;
   height: 34.63vw;
 }
@@ -144,7 +139,7 @@ body {
   height: 15.88vw;
   left: 41.71%;
   position: absolute;
-  top: 37.4vw;
+  top: 33.7vw;
   width: 16.56vw;
 }
 
@@ -187,7 +182,7 @@ body {
   height: 15.88vw;
   left: 60.5%;
   position: absolute;
-  top: 18.60vw;
+  top: 15vw;
   width: 16.56vw;
 }
 
@@ -229,7 +224,7 @@ body {
   height: 15.88vw;
   left: 60.5%;
   position: absolute;
-  top: 37.4vw;
+  top: 33.7vw;
   width: 16.56vw;
 }
 
@@ -263,7 +258,7 @@ body {
   height: 15.88vw;
   left: 41.71%;
   position: absolute;
-  top: 18.60vw;
+  top: 15vw;
   width: 16.56vw;
 }
 
@@ -287,12 +282,6 @@ body {
 
 
 /*EXPERIENCES*/
-.element-PAGE {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 
 .element-EXPERIENCES {
   background-color: #ffffff;
@@ -301,7 +290,7 @@ body {
   justify-content: center;
   top:0px;
   left:0px;
-  height: 100vh;
+  height: 60vw;
   width: 100vw;
 }
 
@@ -313,9 +302,17 @@ body {
   position: absolute; 
 }
 
+.element-EXPERIENCES .rectangle {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
 .HEADER {
   background-color: white;
-  height: 7.59vh;
+  height: 4vw;
   position: absolute;
   width: 100%;
   box-shadow: 0px 15px 10px -15px #0000001a;
@@ -325,14 +322,6 @@ body {
   height: 100%;
   left: 2vw;
   position: absolute;
-}
-
-.element-EXPERIENCES .rectangle {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 3px;
-  width: 100%;
 }
 
 
@@ -393,7 +382,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 8.17%;
-  top: 16.67vh;
+  top: 10vw;
   position: absolute; 
 }
 
@@ -401,7 +390,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 28.28%;
-  top: 16.67vh;
+  top: 10vw;
   position: absolute;
 }
 
@@ -409,7 +398,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 50.46%;
-  top: 16.67vh;
+  top: 10vw;
   position: absolute;  
 }
 
@@ -418,7 +407,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 72.65%;
-  top: 16.67vh;
+  top: 10vw;
   position: absolute; 
 }
 
@@ -426,7 +415,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 28.28%;
-  top: 56.67vh;
+  top: 35vw;
   position: absolute; 
 }
 
@@ -434,7 +423,7 @@ font-weight: 400;
   width: 19.16vw;
   height: 19.16vw;
   left: 50.46%;
-  top: 56.67vh;
+  top: 35vw;
   position: absolute;
 }
 
@@ -446,7 +435,7 @@ font-weight: 400;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 60vw;
   top:0px;
   left:0px;
   position: absolute;
@@ -477,10 +466,10 @@ font-weight: 400;
 
 .element-EMOTIONAL-VALENCE .SETTINGS { 
   left: 61.56vw;
-  top: 20vh;
+  top: 13vw;
   position: absolute;
   width: 24.74vw;
-  height: 63.38vh;
+  height: 38.28vw;
 }
 
 .element-EMOTIONAL-VALENCE .rectangle-2 {
@@ -687,7 +676,7 @@ max-height: 30%;
   width: 42.96vw;
   height: 42.96vw;
   left: 11.35vw;
-  top: 15vh;
+  top: 11vw;
   position: absolute;
 }
 
@@ -808,7 +797,7 @@ max-height: 30%;
   font-family: "Circular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 70%;
+  left: 68%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -822,7 +811,7 @@ max-height: 30%;
   font-family: "Circular", Helvetica;
   font-size: 20px;
   font-weight: 400;
-  left: 70%;
+  left: 68%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -907,6 +896,166 @@ max-height: 30%;
   line-height: normal;
   position: absolute;
   white-space: nowrap;
+}
+
+
+/************AUDIO****************/
+.element-AUDIO-STEP {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top:0px;
+  left:0px;
+  height: 60vw;
+  width: 100vw;
+}
+
+.element-AUDIO-STEP .promousonalogowhite {
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute; 
+}
+
+.element-AUDIO-STEP .rectangle {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+}
+
+.element-AUDIO-STEP .SETTINGS {
+  background-color: #ffffff;
+  border-radius: 3%;
+  height: 26.5vw;
+  left: 31.5vw;
+  position: absolute;
+  top: 16.7vw;
+  width: 37vw;
+}
+
+.element-AUDIO-STEP .overlap-2 {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-AUDIO-STEP .rectangle-2 {
+  height: 22%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 77%;
+  text-align: center;
+  vertical-align: middle;
+
+}
+.element-AUDIO-STEP .audio-text {
+  padding: 7%;
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  top: 40%;
+}
+
+.element-AUDIO-STEP .PLAY-STOP {
+  background-color: #d9d9d92e;
+  border: 1px solid;
+  border-color: #0000001a;
+  border-radius: 47px;
+  box-shadow: 1px 2px 4px #0000001a;
+  left: 27%;
+  position: absolute;
+  top: 73%;
+  width: 13%;
+  height: 17.77%;
+}
+
+.element-AUDIO-STEP .btnimg2 {
+  background-color: #d9d9d900;
+  border: 1px solid;
+  border-color: #00000000;
+  border-radius: 47px;
+  box-shadow: 1px 2px 4px #0000001a;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.element-AUDIO-STEP .img2 {
+  height: 50%;
+  left: 30%;
+  object-fit: cover;
+  position: absolute;
+  top: 25%;
+  width: 50%;
+}
+
+.element-AUDIO-STEP .VOLUME {
+  height: 43%;
+  left: 0px;
+  position: absolute;
+  top: 22%;
+  width: 77%;
+}
+
+.element-AUDIO-STEP .VOLUME-ICON {
+  height: 61px;
+  left: 164px;
+  position: absolute;
+  top: 0;
+  width: 54px;
+}
+
+.element-AUDIO-STEP .SLIDER {
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 96px;
+  width: 381px;
+}
+
+.element-AUDIO-STEP .overlap-group-2 {
+  height: 28px;
+  position: relative;
+}
+
+.element-AUDIO-STEP .line {
+  height: 1px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 22%;
+  width: 77%;
+}
+
+.element-AUDIO-STEP .line-2 {
+  height: 100%;
+  left: 77%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.element-AUDIO-STEP .line-3 {
+  height: 1px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 64.5%;
+  width: 77%;
 }
 
 
@@ -1024,5 +1173,38 @@ max-height: 30%;
 }
 
 .s_slider .range-slider__thumb[data-upper] {
+  background: #e3e3e38a;
+}
+
+/*AUDIO*/
+.a_slider .range-slider__thumb[data-lower] {
+  width: 0;
+}
+
+.a_slider .range-slider__thumb[data-upper] {
+  border: 7px solid #F8F8F8;
+  width: 9px;
+  height: 9px;
+}
+
+.a_slider {
+  width: 60%;
+  left: 10%;
+  background: linear-gradient(to right, #D8EFF2, #C9CCE5, #FDEBF3, #FFE6CE);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 14px;
+  border-radius: 15px;
+}
+
+.a_slider .range-slider__range {
+  background: #00000000;
+  background-size: 200% 100%;
+  background-position: 50% 0;
+  height: 24px;
+  border-radius: 15px;
+}
+
+.a_slider .range-slider__thumb[data-upper] {
   background: #e3e3e38a;
 }

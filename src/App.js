@@ -451,7 +451,7 @@ function App() {
   return (
     <>
 <Swiper 
-  pagination={true} 
+  pagination={false} 
   modules={[Pagination]} 
   className="mySwiper" 
   onInit={onSwiperInit} 
@@ -469,14 +469,11 @@ function App() {
         <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
         
         <header className="HEADER">
-          <div className="overlap-group">
-            <div className="div" />
             <img
               className="element-USONA-logo-high"
               alt="Element USONA logo high"
               src={require('./assets/Logo.png')}
             />
-          </div>
         </header>
 
         <div className="EXPERIENCE">
@@ -500,12 +497,11 @@ function App() {
         </div>
 
         <div className="AUDIO">
-          <div className="overlap-4">
+          <div className="overlap-4" onClick={e => { swiper.slideTo(3); }}>
             <img className="VOLUME-ICON" alt="Volume ICON" src={require('./assets/VOLUMEICON2.png')} />
             <img className="AUDIO-2" alt="Audio" src={require('./assets/AUDIO.png')} />
             <img className="line" alt="Line" src={require('./assets/Line1.png')} />
           </div>
-          <img className="line-2" alt="Line" src="image.svg" />
         </div>
 
         <div className="MOTOR-SYSTEM">
@@ -679,8 +675,8 @@ function App() {
         <div className="text-wrapper-5" draggable="false">depressed</div>
         <div className="text-wrapper-6" draggable="false">sad</div>
         <div className="text-wrapper-7" draggable="false">alert</div>
-        <div className="text-wrapper-8" draggable="false">arousal +</div>
-        <div className="text-wrapper-9" draggable="false">valence +</div>
+        <div className="text-wrapper-8" draggable="false">AROUSAL +</div>
+        <div className="text-wrapper-9" draggable="false">VALENCE +</div>
         <div className="text-wrapper-10" draggable="false">fatigued</div>
         <div className="text-wrapper-11" draggable="false">happy</div>
         <div className="text-wrapper-12" draggable="false">excited</div>
@@ -694,6 +690,91 @@ function App() {
   </div>
 </SwiperSlide>
 
+<SwiperSlide>
+
+  <div className="element-AUDIO-STEP">
+    <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
+    <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/PromoUSONA.png')} />
+
+    <header className="HEADER">
+      <img
+        className="element-USONA-logo-high"
+        alt="Element USONA logo high"
+        src={require('./assets/Logo.png')}
+      />
+      <div className="text-wrapper">AUDIO</div>
+    </header>
+
+    <div className="SETTINGS swiper-no-swiping">
+      <div className="overlap-2">
+        <div className="rectangle-2" >
+          <div className='audio-text'>AUDIO</div>
+        </div>
+
+        <div className="PLAY-STOP">
+          <button  className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause()}}>
+            {Audioplay_pause == 'play' ?  <img className="img2" alt="Play STOP" src={require('./assets/Play.png')}/>: <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')}/>}
+          </button>
+        </div>
+
+        <div className="VOLUME">
+          <img className="VOLUME-ICON" alt="Volume ICON" src={require('./assets/VOLUMEICON.png')} />
+          <div className="SLIDER">
+            <div className="overlap-group-2">
+              <RangeSlider
+                className="a_slider"
+                defaultValue={[0, 1]}
+                thumbsDisabled={[true, false]}
+                rangeSlideDisabled={true}
+                value = {volume}
+                onInput={e => {setVolume(e); changeVolume()}}
+              />    
+            </div>
+          </div>
+        </div>
+
+        <img className="line" alt="Line" src={require('./assets/LineAudio1.png')} />
+        <img className="line-2" alt="Line" src={require('./assets/LineAudio2.png')} />
+        <img className="line-3" alt="Line" src={require('./assets/LineAudio2.png')} />
+        <div ref={parentRef}>
+          {!open && (
+            <img className="SONG-ICON" alt="Song ICON" src={require('./assets/SONGICON.png')} onClick={showMore}/>
+          )}
+        </div>
+
+      </div>
+
+      {open && (
+        <div className="INPUT-SOURCE">
+          <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
+          <img className="BACK" alt="Back" src={require('./assets/BACK.png')} onClick={showMore}/>
+          {source == 1 ? <div className="rectangle-4" /> : null}
+          <div className="rectangle-4btn" onClick={e => {setSource((prevSource) =>1); changeSource(1)}}>
+            <div className="text-wrapper-2">Source 01 - Title</div>
+          </div>
+          {source == 2 ? <div className="rectangle-5" /> : null}
+          <div className="rectangle-5btn" onClick={e => {setSource((prevSource) =>2); changeSource(2)}}>
+            <div className="text-wrapper-3">Source 02 - Title</div>
+          </div>
+          {source == 3 ? <div className="rectangle-6" /> : null}
+          <div className="rectangle-6btn" onClick={e => {setSource((prevSource) =>3); changeSource(3)}}>
+            <div className="text-wrapper-4">Source 03 - Title</div>
+          </div>
+          {source == 4 ? <div className="rectangle-7" /> : null}
+          <div className="rectangle-7btn" onClick={e => {setSource((prevSource) =>4); changeSource(4)}}>
+            <div className="text-wrapper-5">Source 04 - Title</div>
+          </div>
+          <img className="line-3" alt="Line" src={require('./assets/Line4.png')} />
+          <img className="line-4" alt="Line" src={require('./assets/Line4.png')} />
+          <img className="line-5" alt="Line" src={require('./assets/Line4.png')} />
+          <img className="line-6" alt="Line" src={require('./assets/Line4.png')} />
+        </div>
+      )}
+
+    </div>
+  </div>
+
+</SwiperSlide>
 
 
 
