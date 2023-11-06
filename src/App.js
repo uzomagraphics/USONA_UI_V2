@@ -17,7 +17,7 @@ import './App.css';
 // import required modules
 import { Pagination } from "swiper/modules";
 
-const WS_URL = 'ws://192.168.1.71:8000';
+const WS_URL = 'ws://localhost:8000';
 
 function App() {
   // First invocation just for logging when the connection is established.
@@ -89,18 +89,18 @@ useEffect(() => {
 
   var [brightness, setBrightness] = useState('');
   const changeBrightness = (e) => {
-    console.log("Send brightness = " + brightness)
+    console.log("Send brightness = " + e[1]/100)
     sendMessage(JSON.stringify({
-      "brightness": brightness[1] / 100
+      "brightness": e[1]/100
     }
     ));
   };
 
   var [speed, setSpeed] = useState('');
   const changeSpeed = (e) => {
-    console.log("Send speed = " + speed)
+    console.log("Send speed = " + e[1]/100)
     sendMessage(JSON.stringify({
-      "speed": speed[1] / 100
+      "speed": e[1]/100
     }
     ));
   };
@@ -108,9 +108,9 @@ useEffect(() => {
   /////////AUDIO////////
   var [volume, setVolume] = useState('');
   const changeVolume = (e) => {
-    console.log("Send volume = " + volume)
+    console.log("Send volume = " + e[1]/100)
     sendMessage(JSON.stringify({
-      "volume": volume[1] / 100
+      "volume": e[1]/100
     }
     ));
   };
@@ -147,9 +147,9 @@ useEffect(() => {
   //////////////LIGHT//////////////
   var [lightBrightness, setLightBrightness] = useState('');
   const changeLightBrightness = (e) => {
-    console.log("Send light brightness = " + lightBrightness)
+    console.log("Send light brightness = " + e)
     sendMessage(JSON.stringify({
-      "lightBrightness": lightBrightness[1] / 100
+      "lightBrightness": e / 100
     }
     ));
   };
@@ -544,12 +544,19 @@ useEffect(() => {
         src={require('./assets/Logo.png')}
       />
       <div className="text-wrapper">EXPERIENCES</div>
+      <div className="home" onClick={e => { swiper.slideTo(0); }}>
+      <img
+        alt="home"
+        src={require('./assets/home.png')} 
+      />
+      </div>
+      
     </header>
 
     <div className="element-RAIN-FOREST">
       {experience === 'forest' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse7.png')} /> : null}
       <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse7.png')} />
-      <button className="btnimg" onClick={e => { changeExperience('forest'); setExperience('forest'); swiper.slideTo(2); }}>
+      <button className="btnimg" onClick={e => { changeExperience('forest'); setExperience('forest'); }}>
         <img className="img" alt="Element RAIN FOREST" src={require('./assets/RAINFOREST.png')} />
       </button>
     </div>
@@ -557,7 +564,7 @@ useEffect(() => {
     <div className="element-OCEAN">
       {experience === 'ocean' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse8.png')} /> : null}
       <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse8.png')} />
-      <button className="btnimg" onClick={e => { changeExperience('ocean'); setExperience('ocean'); swiper.slideTo(2); }}>
+      <button className="btnimg" onClick={e => { changeExperience('ocean'); setExperience('ocean'); }}>
         <img className="img" alt="Element OCEAN" src={require('./assets/OCEAN.png')} />
       </button>
     </div>
@@ -566,7 +573,7 @@ useEffect(() => {
       <div className="overlap-2">
         {experience === 'meditation' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse10.png')} /> : null}
         <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse10.png')} />
-        <button className="btnimg" onClick={e => { changeExperience('meditation'); setExperience('meditation'); swiper.slideTo(2); }}>
+        <button className="btnimg" onClick={e => { changeExperience('meditation'); setExperience('meditation'); }}>
           <img className="img" alt="Element MEDITATION" src={require('./assets/MEDITATION.png')} />
         </button>
       </div>
@@ -575,7 +582,7 @@ useEffect(() => {
     <div className="element-GALAXY">
       {experience === 'galaxy' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse9.png')} /> : null}
       <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse9.png')} />
-      <button className="btnimg" onClick={e => { changeExperience('galaxy'); setExperience('galaxy'); swiper.slideTo(2); }}>
+      <button className="btnimg" onClick={e => { changeExperience('galaxy'); setExperience('galaxy'); }}>
         <img className="img" alt="Element GALAXY" src={require('./assets/GALAXY.png')} />
       </button>
     </div>
@@ -583,7 +590,7 @@ useEffect(() => {
     <div className="element-SPIRAL-RS">
       {experience === 'spiral' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse11.png')} /> : null}
       <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse11.png')} />
-      <button className="btnimg" onClick={e => { changeExperience('spiral'); setExperience('spiral'); swiper.slideTo(2); }}>
+      <button className="btnimg" onClick={e => { changeExperience('spiral'); setExperience('spiral'); }}>
         <img className="img" alt="Element SPIRAL REACTIVE" src={require('./assets/SPIRAL.png')} />
       </button>
     </div>
@@ -591,7 +598,7 @@ useEffect(() => {
     <div className="element-REACTIVE-SCENE">
       {experience === 'reactive2' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse14.png')} /> : null}
       <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse14.png')} />
-      <button className="btnimg" onClick={e => { changeExperience('reactive2'); setExperience('reactive2'); swiper.slideTo(2); }}>
+      <button className="btnimg" onClick={e => { changeExperience('reactive2'); setExperience('reactive2'); }}>
         <img className="img" alt="Element REACTIVE SCENE" src={require('./assets/REACTIVESCENE.png')} />
       </button>
     </div>
@@ -613,6 +620,12 @@ useEffect(() => {
         src={require('./assets/Logo.png')}
       />
       <div className="text-wrapper">EMOTIONAL VALENCE</div>
+      <div className="home" onClick={e => { swiper.slideTo(0); }}>
+      <img
+        alt="home"
+        src={require('./assets/home.png')} 
+      />
+      </div>
     </header>
 
     <div className="SETTINGS swiper-no-swiping">
@@ -638,7 +651,7 @@ useEffect(() => {
                 thumbsDisabled={[true, false]}
                 rangeSlideDisabled={true}
                 value={brightness}
-                onInput={e => { setBrightness(e); changeBrightness() }}
+                onInput={e => { setBrightness(e); changeBrightness(e) }}
               />
             </div>
           </div>
@@ -647,6 +660,7 @@ useEffect(() => {
 
       <div className="SPEED">
         <div className="overlap-group-wrapper">
+          
           <div className="overlap-group-2">
             <RangeSlider
               className="s_slider"
@@ -654,7 +668,7 @@ useEffect(() => {
               thumbsDisabled={[true, false]}
               rangeSlideDisabled={true}
               value={speed}
-              onInput={e => { setSpeed(e); changeSpeed() }}
+              onInput={e => { setSpeed(e); changeSpeed(e) }}
             />
           </div>
         </div>
@@ -697,6 +711,7 @@ useEffect(() => {
 <SwiperSlide>
 
   <div className="element-AUDIO-STEP">
+    
     <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
     <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/PromoUSONA.png')} />
 
@@ -707,31 +722,34 @@ useEffect(() => {
         src={require('./assets/Logo.png')}
       />
       <div className="text-wrapper">AUDIO</div>
+      <div className="home" onClick={e => { swiper.slideTo(0); }}>
+      <img
+        alt="home"
+        src={require('./assets/home.png')} 
+      />
+      </div>
     </header>
 
     <div className="SETTINGS swiper-no-swiping">
+      <img className="audio_settings" alt="audio settings" src={require('./assets/audiosettings.png')} />
       <div className="overlap-2">
-        <div className="rectangle-2" >
-          <div className='audio-text'>AUDIO</div>
-        </div>
+
 
         <div className="VOLUME">
-          <div className='volume-icon-wrapper' >
-            <img className="VOLUME-ICON" alt="Volume ICON" src={require('./assets/VOLUMEICON.png')} />
-          </div>
 
           <div className='slider-wrapper' >
             <div className="SLIDER">
-          </div>
-            <div className="overlap-group-2">
-              <RangeSlider
-                className="a_slider"
-                defaultValue={[0, 1]}
-                thumbsDisabled={[true, false]}
-                rangeSlideDisabled={true}
-                value = {volume}
-                onInput={e => {setVolume(e); changeVolume()}}
-              />    
+           
+              <div className="overlap-group-2">
+                <RangeSlider
+                  className="a_slider"
+                  defaultValue={[0, 1]}
+                  thumbsDisabled={[true, false]}
+                  rangeSlideDisabled={true}
+                  value = {volume}
+                  onInput={e => {setVolume(e); changeVolume(e)}}
+                />    
+              </div>
             </div>
           </div>
         </div>
@@ -820,6 +838,12 @@ useEffect(() => {
         src={require('./assets/Logo.png')}
       />
       <div className="text-wrapper">LIGHTING</div>
+      <div className="home" onClick={e => { swiper.slideTo(0); }}>
+      <img
+        alt="home"
+        src={require('./assets/home.png')} 
+      />
+      </div>
     </header>
 
         <div className="SETTINGS swiper-no-swiping">
@@ -888,7 +912,9 @@ useEffect(() => {
                 thumbsDisabled={[true, false]}
                 rangeSlideDisabled={true}
                 value = {lightBrightness}
-                onInput={e => {setLightBrightness(e); changeLightBrightness()}}
+                onInput={e => {
+                  setLightBrightness(e); 
+                  changeLightBrightness(e)}}
               />
             </div>
           </div>
@@ -923,6 +949,12 @@ useEffect(() => {
             src={require('./assets/Logo.png')}
           />
           <div className="text-wrapper">MOTOR CONTROL</div>
+          <div className="home" onClick={e => { swiper.slideTo(0); }}>
+      <img
+        alt="home"
+        src={require('./assets/home.png')} 
+      />
+      </div>
         </header>
 
         <div className="SETTINGS">
