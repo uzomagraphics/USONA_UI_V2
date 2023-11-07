@@ -591,9 +591,9 @@ function App() {
             </div>
 
             <div className="element-GALAXY">
-              {experience === 'spiral' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse9.png')} /> : null}
+              {experience === 'space' ? <img className="ellipseRot" alt="Ellipse" src={require('./assets/Ellipse9.png')} /> : null}
               <img className="ellipse" alt="Ellipse" src={require('./assets/Ellipse9.png')} />
-              <button className="btnimg" onClick={e => { changeExperience('spiral'); setExperience('spiral'); }}>
+              <button className="btnimg" onClick={e => { changeExperience('space'); setExperience('space'); }}>
                 <img className="img" alt="Element GALAXY" src={require('./assets/GALAXY.png')} />
               </button>
             </div>
