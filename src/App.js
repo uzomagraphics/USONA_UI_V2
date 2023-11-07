@@ -17,7 +17,9 @@ import './App.css';
 // import required modules
 import { Pagination } from "swiper/modules";
 
-const WS_URL = 'ws://192.168.1.72:8000';
+//const WS_URL = 'ws://192.168.1.72:8000';
+//const WS_URL = 'ws://localhost:8000';
+const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
   // First invocation just for logging when the connection is established.
