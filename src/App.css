@@ -178,6 +178,15 @@ body {
   width: 100%;
 }
 
+.element-HOME .lineExp {
+  height: 1px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+}
+
 .element-HOME .AUDIO {
   height: 15.88vw;
   left: 60.5%;
@@ -340,9 +349,9 @@ font-weight: 400;
 .home {
   position: absolute;
   right: 3vw;
-  top: 48%;
+  top: 47%;
   transform: translateY(-50%);
-  height: 32%;
+  scale: 80%;
 }
 
 
@@ -389,7 +398,7 @@ font-weight: 400;
 .element-RAIN-FOREST {
   width: 19.16vw;
   height: 19.16vw;
-  left: 8.17%;
+  left: 8%;
   top: 10vw;
   position: absolute; 
 }
@@ -397,7 +406,7 @@ font-weight: 400;
 .element-EXPERIENCES .element-OCEAN {
   width: 19.16vw;
   height: 19.16vw;
-  left: 28.28%;
+  left: 29.5%;
   top: 10vw;
   position: absolute;
 }
@@ -405,7 +414,7 @@ font-weight: 400;
 .element-EXPERIENCES .element-MEDITATION {
   width: 19.16vw;
   height: 19.16vw;
-  left: 50.46%;
+  left: 51%;
   top: 10vw;
   position: absolute;  
 }
@@ -414,7 +423,7 @@ font-weight: 400;
 .element-EXPERIENCES .element-GALAXY {
   width: 19.16vw;
   height: 19.16vw;
-  left: 72.65%;
+  left: 72.5%;
   top: 10vw;
   position: absolute; 
 }
@@ -422,7 +431,7 @@ font-weight: 400;
 .element-EXPERIENCES .element-SPIRAL-RS {
   width: 19.16vw;
   height: 19.16vw;
-  left: 28.28%;
+  left: 29.5%;
   top: 35vw;
   position: absolute; 
 }
@@ -430,7 +439,7 @@ font-weight: 400;
 .element-EXPERIENCES .element-REACTIVE-SCENE {
   width: 19.16vw;
   height: 19.16vw;
-  left: 50.46%;
+  left: 51%;
   top: 35vw;
   position: absolute;
 }
@@ -508,12 +517,22 @@ font-weight: 400;
   margin: 0px;
 }
 
+
+
 .element-EMOTIONAL-VALENCE .PLAY-STOP {
-  background-color: #d9d9d92e;
+  background-color: #d9d9d900;
   border: 1px solid;
-  border-color: #0000001a;
+  border-color: #00000000;
   border-radius: 47px;
-  box-shadow: 1px 2px 4px #0000001a;
+  box-shadow: 1px 2px 4px #00000000;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.element-EMOTIONAL-VALENCE .backB {
+
   height: 100%;
   left: 0px;
   position: absolute;
@@ -522,10 +541,12 @@ font-weight: 400;
 }
 
 .element-EMOTIONAL-VALENCE .img {
+  opacity: 0.4;
   object-fit: cover;
   position: absolute;
-  top:25%;
-  left: 20%;
+  top:21%;
+  left: 13%;
+  scale: 60%;
 }
 
 .element-EMOTIONAL-VALENCE .BRIGHTNESS {
@@ -689,7 +710,7 @@ max-height: 30%;
 }
 
 .element-EMOTIONAL-VALENCE .overlap-2 {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 412.5px;
   position: relative;
   width: 100%;
@@ -704,6 +725,7 @@ max-height: 30%;
   top: 7px;
   width: 98.18%;
   height:  98.18%;
+  scale: ;
 }
 
 .element-EMOTIONAL-VALENCE .line-3 {
@@ -726,6 +748,7 @@ max-height: 30%;
   color: #a3b986;
   font-family: "Circular", Helvetica;
   font-size: 20px;
+  transition: font-size 0.2s ease;
   font-weight: 400;
   left: 43%;
   top: 7.15%;
@@ -734,6 +757,7 @@ max-height: 30%;
   position: absolute;
   white-space: nowrap;
 }
+
 
 .element-EMOTIONAL-VALENCE .text-wrapper-3 {
   color: #a3b986;
@@ -1020,10 +1044,10 @@ max-height: 30%;
 
 .element-AUDIO-STEP .VOLUME {
   height: 43%;
-  left: 0px;
+  left: 2.4%;
   position: absolute;
   top: 22%;
-  width: 70%;
+  width: 63.3%;
 
 }
 
@@ -1104,10 +1128,10 @@ width: 100%;
 }
 .element-AUDIO-STEP .icon-wrapper {
   position: absolute;
-  height: 89.22%;
-  top: 10.78%;
-  left: 70%;
-  width: 30%;
+  height: 16%;
+  top: 37%;
+  left: 74%;
+  width: 15%;
 
 }
 
@@ -1150,12 +1174,13 @@ top: 32%;
 
 /*AUDIO2 */
 .element-AUDIO-STEP .INPUT-SOURCE {
-  height: 100%;
-  left: 70%;
+  background-color: rgb(255, 255, 255);
+  height: 92.6%;
+  left: 65.6%;
   position: absolute;
-  top: 0px;
-  width: 30%;
-
+  top: 3.2%;
+  width: 31.2%;
+border-radius: 30px;
 }
 
 .element-AUDIO-STEP .top {
@@ -1424,8 +1449,8 @@ white-space: nowrap;
 }
 
 .element-LIGHTNING .SETTINGS {
-  background-color: #ffffff;
-  border-radius: 3%;
+  background-color: #ffffff00;
+  border-radius: 0%;
   height: 34.5vw;
   left: 30vw;
   position: absolute;
@@ -1472,9 +1497,18 @@ white-space: nowrap;
 }
 
 .element-LIGHTNING .rectangle-2 {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 30px;
-  box-shadow: 4px 4px 20px #00000026;
+  box-shadow: 4px 4px 20px #00000000;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.element-LIGHTNING .backL {
+
   height: 100%;
   left: 0px;
   position: absolute;
@@ -1733,16 +1767,24 @@ white-space: nowrap;
 }
 
 .element-LIGHTNING .UP-DOWN {
-  background-color: #d9d9d92e;
+  background-color: #d9d9d900;
   border: 1px solid;
-  border-color: #0000001a;
+  border-color: #00000000;
   border-radius: 20px;
-  box-shadow: 1px 2px 4px #0000001a;
+  box-shadow: 1px 2px 4px #00000000;
   height: 56%;
   left: 11.5%;
   position: absolute;
   top: 22%;
   width: 13%;
+}
+.element-LIGHTNING .UPDOWNI {
+
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0%;
+  width: 100%;
 }
 
 .element-LIGHTNING .UP {
@@ -1807,7 +1849,7 @@ white-space: nowrap;
   border-color: #00000000;
   border-radius: 20px;
   box-shadow: 1px 2px 4px #00000000;
-  left: 50.6%;
+  left: 20%;
   position: absolute;
   top: 22%;
   width: 17%;
@@ -1845,7 +1887,7 @@ white-space: nowrap;
 
 .element-LIGHTNING .CLOSE {
   background-color: #d9d9d900;
-  left: 71.7%;
+  left: 60%;
   position: absolute;
   top: 22%;
   width: 17%;
@@ -1967,11 +2009,17 @@ white-space: nowrap;
 }
 
 .element-MOTOR-CONTROL .overlap-2 {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 30px;
-  box-shadow: 4px 4px 20px #00000026;
+  box-shadow: 4px 4px 20px #00000000;
   height: 100%;
   position: relative;
+  width: 100%;
+}
+.element-MOTOR-CONTROL .MC {
+
+  height: 100%;
+  position: absolute;
   width: 100%;
 }
 
@@ -2063,16 +2111,24 @@ white-space: nowrap;
 }
 
 .element-MOTOR-CONTROL .UP-DOWN {
-  background-color: #d9d9d92e;
+  background-color: #d9d9d900;
   border: 1px solid;
-  border-color: #0000001a;
+  border-color: #00000000;
   border-radius: 30px;
-  box-shadow: 1px 2px 4px #0000001a;
+  box-shadow: 1px 2px 4px #00000000;
   height: 100%;
   left: 12.7%;
   position: absolute;
   top: 0;
   width: 12.7%;
+}
+.element-MOTOR-CONTROL .UPDOWNI {
+
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0%;
+  width: 100%;
 }
 
 .element-MOTOR-CONTROL .UP-DOWN1 {
@@ -2218,7 +2274,7 @@ white-space: nowrap;
   border-radius: 30px;
   box-shadow: 1px 2px 4px #00000000;
   height: 100%;
-  right: 12.7%;
+  right: 25%;
   position: absolute;
   top: 0;
   width: 17%;
@@ -2307,7 +2363,7 @@ top: 30%;
   background-image: url(./assets/ONOFF.png);
   background-size: 100% 100%;
   height: 40%;
-  left: 10%;
+  left: 23%;
   position: absolute;
   top: 50%;
   width: 95%;
@@ -2328,11 +2384,11 @@ top: 30%;
 }
 
 .element-MOTOR-CONTROL .REBOOT {
-  background-color: #d9d9d92e;
+  background-color: #d9d9d900;
   border: 1px solid;
-  border-color: #0000001a;
+  border-color: #00000000;
   border-radius: 47px;
-  box-shadow: 1px 2px 4px #0000001a;
+  box-shadow: 1px 2px 4px #00000000;
   height: 100%;
   left: 40%;
   position: absolute;
@@ -2342,18 +2398,19 @@ top: 30%;
 
 .element-MOTOR-CONTROL .POWER {
 
-  left: 18%;
-  object-fit: cover;
+  left: 0%;
+
   position: absolute;
-  top: 13%;
-scale: 70%;
+  top: 0%;
+width: 100%;
+height: 100%;
 }
 
 .element-MOTOR-CONTROL .TD-STATUS {
   height: 12px;
-  left: 28%;
+  left: 23%;
   position: absolute;
-  top: 10%;
+  top: 28%;
   width: 177px;
 }
 
@@ -2443,9 +2500,17 @@ scale: 70%;
 }
 
 .element-LOGIN .div {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 30px;
-  box-shadow: 4px 4px 20px #00000026;
+  box-shadow: 4px 4px 20px #00000000;
+  height: 60%;
+  left: 30%;
+  position: absolute;
+  top: 20.37%;
+  width: 40%;
+}
+.element-LOGIN .loginImg {
+
   height: 60%;
   left: 30%;
   position: absolute;
@@ -2482,43 +2547,43 @@ scale: 70%;
 }
 
 .element-LOGIN .overlap-group {
-  color: #302e4999;
+  color: rgba(0, 0, 0, 0.985);
   font-family: "Circular Std-Book", Helvetica;
   font-size: 22px;
   font-weight: 400;
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: #00000000;
+background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
   border-radius: 10px;
   position: absolute;
-  height: 40%;
-  width: 100%;
-  top: 60%;
+  height: 35%;
+  width: 96%;
+  top: 55.5%;
+  left: 1%;
 }
 .element-LOGIN .overlap-group:focus {
   outline: 0;
-  color: #302e4999;
-  outline-color: transparent;
-  outline-style: none;
+  color: rgba(0, 0, 0, 0.985);
   font-family: "Circular Std-Book", Helvetica;
   font-size: 22px;
   font-weight: 400;
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-  background-color: #ff000000;
+background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
   border-radius: 10px;
   position: absolute;
-  height: 40%;
-  width: 100%;
-  top: 60%;
+  height: 35%;
+  width: 96%;
+  top: 55.5%;
+  left: 1%;
 }
 
 
@@ -2555,73 +2620,72 @@ background-color: #00000000;
 }
 
 .element-LOGIN .rectangle-2 {
+  color: rgba(0, 0, 0, 0.985);
   font-family: "Circular Std-Book", Helvetica;
-  color: #302e4999;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 400;
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: #00000000;
+background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
   border-radius: 10px;
   position: absolute;
-  height: 40%;
-  width: 100%;
-  left: 0px;
-  top: 60%;
+  height: 35%;
+  width: 96%;
+  top: 68%;
+  left: 1%;
 }
 .element-LOGIN .rectangle-2:focus {
   outline: 0;
-  color: #302e4999;
-  outline-color: transparent;
-  outline-style: none;
+  color: rgba(0, 0, 0, 0.985);
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 400;
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-  background-color: #ff000000;
+background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
   border-radius: 10px;
   position: absolute;
-  height: 40%;
-  width: 100%;
-  top: 60%;
+  height: 35%;
+  width: 96%;
+  top: 68%;
+  left: 1%;
 }
 
 .element-LOGIN .ENTER {
-  background-image: url(./assets/Rectangle19.png);
+
   position: absolute;
-  height: 13.2%;
-  left: 40%;
-  top: 80%;
-  width: 19.6%;
+  height: 11%;
+  left: 41%;
+  top: 79%;
+  width: 17%;
   scale: 70%;
   background-repeat: no-repeat;
 }
 .element-LOGIN .submitbtn {
-  background-color: #ffffff4c;
+  background-color: #ffffff00;
   border-color: #00000000;
-  height: 52px;
+  height: 100%;
   left: 0px;
   position: absolute;
   top: 0px;
-  width: 88px;
+  width: 100%;
   border-radius: 30px;
 }
 
 .element-LOGIN .div-wrapper {
   background-color: #00000005;
   border-radius: 100px;
-  height: 52px;
+  height: 100%;
   position: relative;
-  width: 86px;
+  width: 100%;
 }
 
 .element-LOGIN .text-wrapper-3 {
