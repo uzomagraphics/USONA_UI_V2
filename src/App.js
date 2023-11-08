@@ -187,6 +187,21 @@ function App() {
     }));
   };
 
+  const sendCrestronButton3 = () => {
+    console.log("sendCrestronButton3");
+    sendMessage(JSON.stringify({
+      "crestronButton": 3,
+      "type": "public_c"
+    }));
+  };
+  const sendCrestronButton4 = () => {
+    console.log("sendCrestronButton4");
+    sendMessage(JSON.stringify({
+      "crestronButton": 4,
+      "type": "public_c"
+    }));
+  };
+
 
   //////////////BLINDS//////////////
   var [blinds, setBlinds] = useState('');
@@ -950,10 +965,10 @@ function App() {
 
                   <div className="UP-DOWN">
                     <img className="UPDOWNI" alt="Up" src={require('./assets/UPDOWN.png')} />
-                    <div className='UP-DOWN2' onClick={e => { setBlinds(blinds <= 0.9 ? blinds + 0.1 : 1); changeBlinds(blinds <= 0.9 ? blinds + 0.1 : 1) }}>
+                    <div className='UP-DOWN2' onClick={sendCrestronButton3} >
 
                     </div>
-                    <div className='UP-DOWN1' onClick={e => { setBlinds(blinds >= 0.1 ? blinds - 0.1 : 0); changeBlinds(blinds >= 0.1 ? blinds - 0.1 : 0) }}>
+                    <div className='UP-DOWN1' onClick={sendCrestronButton4} >
 
                     </div>
 
