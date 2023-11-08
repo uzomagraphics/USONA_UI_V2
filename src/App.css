@@ -2,14 +2,19 @@ body {
   background: #ffffff;
   margin: 0;
   padding: 0;
+  overflow: hidden; /* Hide scrollbars */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
 }
 
 /**************ALIX*************************/
 
 @font-face {
-	font-family: "Circular";   /*Can be any text*/
-	src: local("CircularStd-Book"),
-	  url("./fonts/CircularStd-Book.ttf") format("truetype");
+  font-family: "Circular"; /*Can be any text*/
+  src: local("CircularStd-Book"),
+    url("./fonts/CircularStd-Book.ttf") format("truetype");
 }
 
 /*HOME*/
@@ -26,7 +31,6 @@ body {
   background-color: #ffffff;
   height: 100%;
   width: 100%;
-
 }
 
 .element-HOME .overlap {
@@ -35,7 +39,7 @@ body {
 }
 
 .element-HOME .rectangle {
-  height:100% ;
+  height: 100%;
   left: 0;
   position: absolute;
   top: 3px;
@@ -47,7 +51,7 @@ body {
   width: 100%;
   left: 0px;
   top: 0px;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-HOME .HEADER {
@@ -57,8 +61,6 @@ body {
   width: 100%;
   box-shadow: 0px 15px 10px -15px #0000001a;
 }
-
-
 
 .element-HOME .div {
   background-color: #ffffff;
@@ -280,7 +282,6 @@ body {
 }
 
 .element-HOME .noun-flower-of-life {
-
   left: 35.75%;
   object-fit: cover;
   position: absolute;
@@ -288,19 +289,15 @@ body {
   width: 28.16%;
 }
 
-
-
 /*EXPERIENCES*/
-
-
 
 .element-EXPERIENCES {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   height: 60vw;
   width: 100vw;
 }
@@ -310,7 +307,7 @@ body {
   width: 100%;
   left: 0px;
   top: 0px;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-EXPERIENCES .rectangle {
@@ -335,12 +332,11 @@ body {
   position: absolute;
 }
 
-
 .text-wrapper {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 30px;
-font-weight: 400;
+  font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -356,10 +352,7 @@ font-weight: 400;
   scale: 80%;
 }
 
-
-
 .element-EXPERIENCES .ellipse {
-  
   height: 100%;
   left: 50%;
   position: absolute;
@@ -368,7 +361,6 @@ font-weight: 400;
 }
 
 .element-EXPERIENCES .ellipseRot {
-
   height: 100%;
   left: 0%;
   position: absolute;
@@ -376,8 +368,6 @@ font-weight: 400;
   width: 50%;
   transform: scale(-1, 1);
 }
-
-
 
 .element-EXPERIENCES .img {
   height: 100%;
@@ -406,7 +396,7 @@ font-weight: 400;
   height: 19.16vw;
   left: 8%;
   top: 10vw;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-EXPERIENCES .element-OCEAN {
@@ -422,16 +412,15 @@ font-weight: 400;
   height: 19.16vw;
   left: 51%;
   top: 10vw;
-  position: absolute;  
+  position: absolute;
 }
-
 
 .element-EXPERIENCES .element-GALAXY {
   width: 19.16vw;
   height: 19.16vw;
   left: 72.5%;
   top: 10vw;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-EXPERIENCES .element-SPIRAL-RS {
@@ -439,7 +428,7 @@ font-weight: 400;
   height: 19.16vw;
   left: 29.5%;
   top: 35vw;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-EXPERIENCES .element-REACTIVE-SCENE {
@@ -459,8 +448,8 @@ font-weight: 400;
   justify-content: center;
   width: 100vw;
   height: 60vw;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   position: absolute;
 }
 
@@ -476,7 +465,7 @@ font-weight: 400;
   width: 100%;
   left: 0px;
   top: 0px;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-EMOTIONAL-VALENCE .rectangle {
@@ -487,7 +476,7 @@ font-weight: 400;
   width: 100%;
 }
 
-.element-EMOTIONAL-VALENCE .SETTINGS { 
+.element-EMOTIONAL-VALENCE .SETTINGS {
   left: 61.56vw;
   top: 3.2vw;
   position: absolute;
@@ -500,22 +489,17 @@ font-weight: 400;
   border-radius: 30px;
   box-shadow: 4px 4px 20px #00000000;
 
-
   position: absolute;
   width: 100%;
   height: 100%;
-
 }
 .element-EMOTIONAL-VALENCE .backR {
-
   position: absolute;
   width: 100%;
   height: 100%;
-
 }
 
 .element-EMOTIONAL-VALENCE .btnimg {
-  
   object-fit: cover;
   position: absolute;
   align-items: center;
@@ -530,8 +514,6 @@ font-weight: 400;
   margin: 0px;
 }
 
-
-
 .element-EMOTIONAL-VALENCE .PLAY-STOP {
   background-color: #d9d9d900;
   border: 1px solid;
@@ -545,7 +527,6 @@ font-weight: 400;
   width: 100%;
 }
 .element-EMOTIONAL-VALENCE .backB {
-
   height: 100%;
   left: 0px;
   position: absolute;
@@ -557,7 +538,7 @@ font-weight: 400;
   opacity: 0.4;
   object-fit: cover;
   position: absolute;
-  top:23%;
+  top: 23%;
   left: 13%;
   scale: 64%;
 }
@@ -570,20 +551,20 @@ font-weight: 400;
   width: 90%;
 }
 
-.element-EMOTIONAL-VALENCE .line-b{
+.element-EMOTIONAL-VALENCE .line-b {
   position: absolute;
   width: 100%;
   top: 9%;
 }
 
-.element-EMOTIONAL-VALENCE .text-brightness{
+.element-EMOTIONAL-VALENCE .text-brightness {
   position: relative;
   width: 100%;
   height: 9%;
   text-align: center;
   vertical-align: middle;
 }
-.element-EMOTIONAL-VALENCE .bright{
+.element-EMOTIONAL-VALENCE .bright {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 15px;
@@ -593,10 +574,10 @@ font-weight: 400;
   text-align: center;
 }
 .element-EMOTIONAL-VALENCE .BRIGHTNESS-ICON {
-margin: auto;
-display: block;
-max-width: 30%;
-max-height: 30%;
+  margin: auto;
+  display: block;
+  max-width: 30%;
+  max-height: 30%;
 }
 
 .element-EMOTIONAL-VALENCE .SLIDER {
@@ -604,10 +585,9 @@ max-height: 30%;
   display: block;
   width: 85%;
   max-height: 30%;
-  top:25%;
+  top: 25%;
   position: relative;
 }
-
 
 .element-EMOTIONAL-VALENCE .rectangle-3 {
   height: 19px;
@@ -648,7 +628,6 @@ max-height: 30%;
   position: absolute;
   top: 38%;
   width: 90%;
-
 }
 
 .element-EMOTIONAL-VALENCE .AUDIOR {
@@ -657,7 +636,6 @@ max-height: 30%;
   position: absolute;
   top: 78%;
   width: 90%;
-
 }
 
 .element-EMOTIONAL-VALENCE .overlap-group-wrapper {
@@ -665,16 +643,16 @@ max-height: 30%;
   display: block;
   width: 85%;
   max-height: 30%;
-  top:65%;
+  top: 65%;
   position: relative;
 }
 
-.element-EMOTIONAL-VALENCE .overlap-audior2{
+.element-EMOTIONAL-VALENCE .overlap-audior2 {
   margin: auto;
   display: block;
   width: 85%;
   max-height: 30%;
-  top:65%;
+  top: 65%;
   position: relative;
 }
 
@@ -693,9 +671,9 @@ max-height: 30%;
 
 .element-EMOTIONAL-VALENCE .SPEED-ICON {
   margin: auto;
-display: block;
-max-width: 30%;
-max-height: 30%;
+  display: block;
+  max-width: 30%;
+  max-height: 30%;
 }
 
 .element-EMOTIONAL-VALENCE .line {
@@ -708,7 +686,7 @@ max-height: 30%;
   width: 100%;
   top: 50%;
 }
-.element-EMOTIONAL-VALENCE .text-speed{
+.element-EMOTIONAL-VALENCE .text-speed {
   position: relative;
   width: 100%;
   height: 9%;
@@ -716,7 +694,7 @@ max-height: 30%;
   text-align: center;
   vertical-align: middle;
 }
-.element-EMOTIONAL-VALENCE .speed_t{
+.element-EMOTIONAL-VALENCE .speed_t {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 15px;
@@ -740,7 +718,6 @@ max-height: 30%;
   position: absolute;
 }
 
-
 .element-EMOTIONAL-VALENCE .pointer-container {
   display: flex;
   flex-direction: column;
@@ -751,32 +728,31 @@ max-height: 30%;
 }
 .element-EMOTIONAL-VALENCE .pointerimg {
   position: absolute;
-  width: 50px; 
-  height: 50px; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .element-EMOTIONAL-VALENCE .overlap-2 {
   background-color: #ffffff00;
   border-radius: 50%;
   position: relative;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
 
 .element-EMOTIONAL-VALENCE .FLOWER-OF-LIFE {
-  
   left: 8px;
   object-fit: cover;
   position: absolute;
   top: 7px;
   width: 98.18%;
-  height:  98.18%;
+  height: 98.18%;
   scale: ;
 }
 
@@ -784,16 +760,16 @@ max-height: 30%;
   height: 62.78%;
   position: absolute;
   width: 62.78%;
-  left:18.6%;
-  top:18.6%;
+  left: 18.6%;
+  top: 18.6%;
 }
 
 .element-EMOTIONAL-VALENCE .line-4 {
   height: 62.78%;
   position: absolute;
   width: 62.78%;
-  left:18.6%;
-  top:18.6%;
+  left: 18.6%;
+  top: 18.6%;
 }
 
 .element-EMOTIONAL-VALENCE .text-wrapper-2 {
@@ -809,7 +785,6 @@ max-height: 30%;
   position: absolute;
   white-space: nowrap;
 }
-
 
 .element-EMOTIONAL-VALENCE .text-wrapper-3 {
   color: #a3b986;
@@ -982,15 +957,14 @@ max-height: 30%;
   white-space: nowrap;
 }
 
-
 /************AUDIO****************/
 .element-AUDIO-STEP {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   height: 60vw;
   width: 100vw;
 }
@@ -1000,7 +974,7 @@ max-height: 30%;
   width: 100%;
   left: 0px;
   top: 0px;
-  position: absolute; 
+  position: absolute;
 }
 
 .element-AUDIO-STEP .rectangle {
@@ -1021,7 +995,7 @@ max-height: 30%;
   width: 40vw;
 }
 
-.element-AUDIO-STEP .audio_settings{
+.element-AUDIO-STEP .audio_settings {
   width: 100%;
   height: 100%;
   top: 0%;
@@ -1044,7 +1018,6 @@ max-height: 30%;
   width: 70%;
   text-align: center;
   vertical-align: middle;
-
 }
 .element-AUDIO-STEP .audio-text {
   padding: 7%;
@@ -1100,11 +1073,10 @@ max-height: 30%;
   position: absolute;
   top: 22%;
   width: 63.3%;
-
 }
 
 .element-AUDIO-STEP .volume-icon-wrapper {
-  width:100%;
+  width: 100%;
   height: 25%;
   top: 20%;
   position: absolute;
@@ -1114,22 +1086,20 @@ max-height: 30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top:50%;
+  top: 50%;
   width: 10%;
 }
 
 .element-AUDIO-STEP .slider-wrapper {
-  width:100%;
+  width: 100%;
   height: 25%;
   top: 55%;
   position: absolute;
 }
 
-
-
 .element-AUDIO-STEP .SLIDER {
-height: 50%;
-width: 100%;
+  height: 50%;
+  width: 100%;
 }
 
 .element-AUDIO-STEP .overlap-group-2 {
@@ -1174,7 +1144,6 @@ width: 100%;
 }
 
 .element-AUDIO-STEP .song-icon-wrapper {
-
   height: 100%;
   width: 100%;
 }
@@ -1184,7 +1153,6 @@ width: 100%;
   top: 37%;
   left: 74%;
   width: 15%;
-
 }
 
 .element-AUDIO-STEP .line-4 {
@@ -1193,14 +1161,14 @@ width: 100%;
   object-fit: cover;
   position: absolute;
   top: 0%;
-  width:100%;
+  width: 100%;
 }
 
 .element-AUDIO-STEP .SONG-ICON {
-position: absolute;
-width: 60%;
-left: 20%;
-top: 32%;
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 32%;
 }
 
 .element-AUDIO-STEP .song-wrapper {
@@ -1209,7 +1177,6 @@ top: 32%;
   top: 0%;
   left: 70%;
   width: 30%;
-
 }
 
 .element-AUDIO-STEP .SONG {
@@ -1232,7 +1199,7 @@ top: 32%;
   position: absolute;
   top: 3.2%;
   width: 31.2%;
-border-radius: 30px;
+  border-radius: 30px;
 }
 
 .element-AUDIO-STEP .top {
@@ -1241,7 +1208,6 @@ border-radius: 30px;
   top: 0%;
   left: 0%;
   width: 100%;
-
 }
 
 .element-AUDIO-STEP .bottom {
@@ -1250,7 +1216,6 @@ border-radius: 30px;
   height: 89.22%;
   left: 0%;
   width: 100%;
-
 }
 
 .element-AUDIO-STEP .line-bottom {
@@ -1259,7 +1224,7 @@ border-radius: 30px;
   object-fit: cover;
   position: absolute;
   top: 100%;
-  width:100%;
+  width: 100%;
 }
 
 .element-AUDIO-STEP .SONG-ICON2 {
@@ -1267,76 +1232,75 @@ border-radius: 30px;
   width: 15%;
   left: 75%;
   top: 30%;
-  }
+}
 
-  .element-AUDIO-STEP .BACK {
-    position: absolute;
-    width: 10%;
-    left: 8%;
-    top: 30%;
-
-    }
-    .element-AUDIO-STEP .text-wrapper-2 {
-    color: #0000004c;
-    font-family: "Circular Std-Book", Helvetica;
-    font-size: 13px;
-    font-weight: 400;
-    left: 17%;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 35%;
-    width: 80%;
-    white-space: nowrap;
-    }
-    .element-AUDIO-STEP .text-wrapper-3 {
-    color: #000000;
-    font-family: "Circular Std-Book", Helvetica;
-    font-size: 15px;
-    font-weight: 400;
-    left: 57px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 45px;
-    white-space: nowrap;
-    }
-    .element-AUDIO-STEP .text-wrapper-4 {
-    color: #000000;
-    font-family: "Circular Std-Book", Helvetica;
-    font-size: 15px;
-    font-weight: 400;
-    left: 57px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 45px;
-    white-space: nowrap;
-    }
-    .element-AUDIO-STEP .text-wrapper-5 {
-    color: #000000;
-    font-family: "Circular Std-Book", Helvetica;
-    font-size: 15px;
-    font-weight: 400;
-    left: 57px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 45px;
-    white-space: nowrap;
-    }
-    .element-AUDIO-STEP .text-wrapper-6 {
-      color: #000000;
-      font-family: "Circular Std-Book", Helvetica;
-      font-size: 15px;
-      font-weight: 400;
-      left: 57px;
-      letter-spacing: 0;
-      line-height: normal;
-      position: absolute;
-      top: 45px;
-      white-space: nowrap;
-      }
+.element-AUDIO-STEP .BACK {
+  position: absolute;
+  width: 10%;
+  left: 8%;
+  top: 30%;
+}
+.element-AUDIO-STEP .text-wrapper-2 {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  left: 17%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 35%;
+  width: 80%;
+  white-space: nowrap;
+}
+.element-AUDIO-STEP .text-wrapper-3 {
+  color: #000000;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+}
+.element-AUDIO-STEP .text-wrapper-4 {
+  color: #000000;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+}
+.element-AUDIO-STEP .text-wrapper-5 {
+  color: #000000;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+}
+.element-AUDIO-STEP .text-wrapper-6 {
+  color: #000000;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+}
 
 /*AUDIOBOXEsss////*/
 .element-AUDIO-STEP .rectangle-4btn {
@@ -1344,83 +1308,82 @@ border-radius: 30px;
   height: 20%;
   left: 0px;
   position: absolute;
-  top:0%;
+  top: 0%;
   width: 100%;
-  }
+}
 .element-AUDIO-STEP .rectangle-5btn {
   background-color: #d9d9d900;
   height: 20%;
   left: 0px;
   position: absolute;
-  top:20%;
+  top: 20%;
   width: 100%;
-  }
+}
 .element-AUDIO-STEP .rectangle-6btn {
   background-color: #d9d9d900;
   height: 20%;
   left: 0px;
   position: absolute;
-  top:40%;
+  top: 40%;
   width: 100%;
-  }
+}
 .element-AUDIO-STEP .rectangle-7btn {
   background-color: #d9d9d900;
   height: 20%;
   left: 0px;
   position: absolute;
-  top:60%;
+  top: 60%;
   width: 100%;
-  }
-  .element-AUDIO-STEP .rectangle-8btn {
-    background-color: #d9d9d900;
-    height: 20%;
-    left: 0px;
-    position: absolute;
-    top:80%;
-    width: 100%;
-    }
-  .element-AUDIO-STEP .rectangle-4 {
-    background-color: #d9d9d956;
-    height: 20%;
-    left: 0px;
-    position: absolute;
-    top:0px;
-    width: 100%;
-    }
-  .element-AUDIO-STEP .rectangle-5 {
-    background-color: #d9d9d956;
-    height: 20%;
-    left: 0px;
-    position: absolute;
-    top:20%;
-    width: 100%;
-    }
-  .element-AUDIO-STEP .rectangle-6 {
-    background-color: #d9d9d956;
-    height: 20%;
-    left: 0px;
-    position: absolute;
-    top:40%;
-    width: 100%;
-    }
-  .element-AUDIO-STEP .rectangle-7 {
-    background-color: #d9d9d956;
-    height: 20%;
-    left: 0px;
-    position: absolute;
-    top:60%;
-    width: 100%;
-    }
-    .element-AUDIO-STEP .rectangle-8 {
-      background-color: #d9d9d956;
-      height: 20%;
-      left: 0px;
-      position: absolute;
-      top:80%;
-      width: 100%;
-      border-radius: 0px 0px 10px 0px;
-      }
-
+}
+.element-AUDIO-STEP .rectangle-8btn {
+  background-color: #d9d9d900;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 80%;
+  width: 100%;
+}
+.element-AUDIO-STEP .rectangle-4 {
+  background-color: #d9d9d956;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.element-AUDIO-STEP .rectangle-5 {
+  background-color: #d9d9d956;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+}
+.element-AUDIO-STEP .rectangle-6 {
+  background-color: #d9d9d956;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.element-AUDIO-STEP .rectangle-7 {
+  background-color: #d9d9d956;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 60%;
+  width: 100%;
+}
+.element-AUDIO-STEP .rectangle-8 {
+  background-color: #d9d9d956;
+  height: 20%;
+  left: 0px;
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  border-radius: 0px 0px 10px 0px;
+}
 
 /*********LIGHT***********/
 .element-LIGHTNING {
@@ -1428,12 +1391,11 @@ border-radius: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   height: 60vw;
   width: 100vw;
 }
-
 
 .element-LIGHTNING .promousonalogowhite {
   height: 100%;
@@ -1480,7 +1442,7 @@ border-radius: 30px;
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 30px;
-font-weight: 400;
+  font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -1489,15 +1451,15 @@ font-weight: 400;
 }
 .element-LIGHTNING .textLight {
   color: #0000004c;
-font-family: "Circular Std-Book", Helvetica;
-font-size: 30px;
-font-weight: 400;
-left: 1706px;
-letter-spacing: 0;
-line-height: normal;
-position: absolute;
-top: 27px;
-white-space: nowrap;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  left: 1706px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 27px;
+  white-space: nowrap;
 }
 
 .element-LIGHTNING .SETTINGS {
@@ -1560,7 +1522,6 @@ white-space: nowrap;
 }
 
 .element-LIGHTNING .backL {
-
   height: 100%;
   left: 0px;
   position: absolute;
@@ -1602,7 +1563,7 @@ white-space: nowrap;
   position: absolute;
   top: 0px;
   width: 1px;
-  }
+}
 
 .element-LIGHTNING .img {
   height: 238px;
@@ -1719,7 +1680,6 @@ white-space: nowrap;
   width: 28px;
 }
 
-
 .element-LIGHTNING .ellipse {
   background-color: #d9d9d94c;
   border: 1px solid;
@@ -1748,15 +1708,15 @@ white-space: nowrap;
   position: absolute;
   top: 27px;
   width: 62px;
-  }
+}
 
-  .element-LIGHTNING .CURSEUR {
-    height: 28px;
-    left: 1px;
-    position: absolute;
-    top: -1px;
-    width: 28px;
-    }
+.element-LIGHTNING .CURSEUR {
+  height: 28px;
+  left: 1px;
+  position: absolute;
+  top: -1px;
+  width: 28px;
+}
 
 .element-LIGHTNING .CURSEUR-wrapper {
   /*background-image: url(./image.png);*/
@@ -1831,7 +1791,6 @@ white-space: nowrap;
   width: 13%;
 }
 .element-LIGHTNING .UPDOWNI {
-
   height: 100%;
   left: 0%;
   position: absolute;
@@ -1879,7 +1838,12 @@ white-space: nowrap;
 .element-LIGHTNING .rectangle-4 {
   border: 1px solid;
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgb(135, 160, 220), rgb(163, 185, 134)) 1;
+  border-image: linear-gradient(
+      to bottom,
+      rgb(135, 160, 220),
+      rgb(163, 185, 134)
+    )
+    1;
   border-radius: 20px;
   height: 66px;
   left: 26px;
@@ -1979,8 +1943,8 @@ white-space: nowrap;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   height: 60vw;
   width: 100vw;
 }
@@ -2039,7 +2003,6 @@ white-space: nowrap;
   transform: translateY(-50%);
 }
 
-
 .element-MOTOR-CONTROL .div {
   background-color: #ffffff;
   box-shadow: 0px 5px 20px #0000001a;
@@ -2049,9 +2012,6 @@ white-space: nowrap;
   top: 0;
   width: 1920px;
 }
-
-
-
 
 .element-MOTOR-CONTROL .SETTINGS {
   height: 31.5vw;
@@ -2070,7 +2030,6 @@ white-space: nowrap;
   width: 100%;
 }
 .element-MOTOR-CONTROL .MC {
-
   height: 100%;
   position: absolute;
   width: 100%;
@@ -2176,7 +2135,6 @@ white-space: nowrap;
   width: 12.7%;
 }
 .element-MOTOR-CONTROL .UPDOWNI {
-
   height: 100%;
   left: 0%;
   position: absolute;
@@ -2247,7 +2205,6 @@ white-space: nowrap;
 }
 
 .element-MOTOR-CONTROL .POSITIONbtn {
-
   border-radius: 10px;
   height: 100%;
   left: 0px;
@@ -2364,10 +2321,10 @@ white-space: nowrap;
   border: 1.5px solid;
   border-color: #00000033;
   position: absolute;
-width: 35%;
-height: 35%;
-left: 30%;
-top: 30%;
+  width: 35%;
+  height: 35%;
+  left: 30%;
+  top: 30%;
 }
 
 .element-MOTOR-CONTROL .CURSEUR2 {
@@ -2421,19 +2378,19 @@ top: 30%;
   top: 50%;
   width: 95%;
   scale: 65%;
-  }
-  .element-MOTOR-CONTROL .right {
-    height: 83%;
-    left: 50%;
-    position: absolute;
-    top: 17%;
-    width: 50%;
-  }
+}
+.element-MOTOR-CONTROL .right {
+  height: 83%;
+  left: 50%;
+  position: absolute;
+  top: 17%;
+  width: 50%;
+}
 .element-MOTOR-CONTROL .SYSTEM {
- position: absolute;
- top: 35%;
- height: 20%;
- width: 100%;
+  position: absolute;
+  top: 35%;
+  height: 20%;
+  width: 100%;
 }
 
 .element-MOTOR-CONTROL .REBOOT {
@@ -2450,13 +2407,12 @@ top: 30%;
 }
 
 .element-MOTOR-CONTROL .POWER {
-
   left: 0%;
 
   position: absolute;
   top: 0%;
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .element-MOTOR-CONTROL .TD-STATUS {
@@ -2563,7 +2519,6 @@ height: 100%;
   width: 40%;
 }
 .element-LOGIN .loginImg {
-
   height: 60%;
   left: 30%;
   position: absolute;
@@ -2607,7 +2562,7 @@ height: 100%;
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: rgba(255, 0, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
@@ -2627,7 +2582,7 @@ background-color: rgba(255, 0, 0, 0);
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: rgba(255, 0, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
@@ -2638,7 +2593,6 @@ background-color: rgba(255, 0, 0, 0);
   top: 55.5%;
   left: 1%;
 }
-
 
 .element-LOGIN .text-wrapper {
   display: block;
@@ -2680,7 +2634,7 @@ background-color: rgba(255, 0, 0, 0);
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: rgba(255, 0, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
@@ -2700,7 +2654,7 @@ background-color: rgba(255, 0, 0, 0);
   padding: 0px;
   letter-spacing: 0;
   line-height: normal;
-background-color: rgba(255, 0, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
   white-space: nowrap;
   text-align: center;
   border: 0px;
@@ -2713,7 +2667,6 @@ background-color: rgba(255, 0, 0, 0);
 }
 
 .element-LOGIN .ENTER {
-
   position: absolute;
   height: 11%;
   left: 41%;
@@ -2768,7 +2721,7 @@ background-color: rgba(255, 0, 0, 0);
   position: absolute;
   top: 3px;
   width: 1919px;
-  }
+}
 
 /* Gradient Range Slider */
 #range-slider-gradient {
@@ -2797,7 +2750,9 @@ background-color: rgba(255, 0, 0, 0);
 }
 
 #range-slider-gradient .range-slider__range[data-active],
-#range-slider-gradient .range-slider__thumb[data-active]~.range-slider__range {
+#range-slider-gradient
+  .range-slider__thumb[data-active]
+  ~ .range-slider__range {
   animation: move-bg 0.75s infinite linear;
 }
 
@@ -2831,13 +2786,13 @@ background-color: rgba(255, 0, 0, 0);
 }
 
 .b_slider .range-slider__thumb[data-upper] {
-  border: 7px solid #F8F8F8;
+  border: 7px solid #f8f8f8;
   width: 9px;
   height: 9px;
 }
 
 .b_slider {
-  background: linear-gradient(to right, #ffffff, #EAF5E2, #D0E2FF);
+  background: linear-gradient(to right, #ffffff, #eaf5e2, #d0e2ff);
   background-size: 200% 100%;
   background-position: 50% 0;
   height: 14px;
@@ -2862,13 +2817,13 @@ background-color: rgba(255, 0, 0, 0);
 }
 
 .s_slider .range-slider__thumb[data-upper] {
-  border: 7px solid #F8F8F8;
+  border: 7px solid #f8f8f8;
   width: 9px;
   height: 9px;
 }
 
 .s_slider {
-  background: linear-gradient(to right, #D8EFF2, #C9CCE5, #FDEBF3, #FFE6CE);
+  background: linear-gradient(to right, #d8eff2, #c9cce5, #fdebf3, #ffe6ce);
   background-size: 200% 100%;
   background-position: 50% 0;
   height: 14px;
@@ -2887,19 +2842,18 @@ background-color: rgba(255, 0, 0, 0);
   background: #e3e3e38a;
 }
 
-
 .ar_slider .range-slider__thumb[data-lower] {
   width: 0;
 }
 
 .ar_slider .range-slider__thumb[data-upper] {
-  border: 7px solid #F8F8F8;
+  border: 7px solid #f8f8f8;
   width: 9px;
   height: 9px;
 }
 
 .ar_slider {
-  background: linear-gradient(to right, #D0E2FF,  #EAF5E2, #ffffff);
+  background: linear-gradient(to right, #d0e2ff, #eaf5e2, #ffffff);
   background-size: 200% 100%;
   background-position: 50% 0;
   height: 14px;
@@ -2924,7 +2878,7 @@ background-color: rgba(255, 0, 0, 0);
 }
 
 .a_slider .range-slider__thumb[data-upper] {
-  border: 7px solid #F8F8F8;
+  border: 7px solid #f8f8f8;
   width: 9px;
   height: 9px;
 }
@@ -2932,7 +2886,7 @@ background-color: rgba(255, 0, 0, 0);
 .a_slider {
   width: 80%;
   left: 10%;
-  background: linear-gradient(to right, #D8EFF2, #C9CCE5, #FDEBF3, #FFE6CE);
+  background: linear-gradient(to right, #d8eff2, #c9cce5, #fdebf3, #ffe6ce);
   background-size: 200% 100%;
   background-position: 50% 0;
   height: 14px;
