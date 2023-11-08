@@ -17,11 +17,13 @@ import './App.css';
 // import required modules
 import { Pagination } from "swiper/modules";
 
-//const WS_URL = 'ws://192.168.1.72:8000';
+const WS_URL = 'ws://192.168.1.72:8000';
 //const WS_URL = 'ws://localhost:8000';
-const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
+//const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
+
+  
   // First invocation just for logging when the connection is established.
   useWebSocket(WS_URL, {
     onOpen: () => {
@@ -103,6 +105,15 @@ function App() {
     console.log("Send speed = " + e[1] / 100)
     sendMessage(JSON.stringify({
       "speed": e[1] / 100
+    }
+    ));
+  };
+
+  var [AR, setAR] = useState('');
+  const changeAR = (e) => {
+    console.log("Send audioreactivity = " + e[1] / 100)
+    sendMessage(JSON.stringify({
+      "audioreactivity": e[1] / 100
     }
     ));
   };
@@ -360,6 +371,10 @@ function App() {
   //This will keep the reference to the DOM node for the "EMOTIONAL-CIRCLE"
   const emotionalCircleRef = useRef(null);
 
+  const [translatedXX, setTranslatedXX] = useState(255);
+  const [translatedYY, setTranslatedYY] = useState(255);
+
+
   useEffect(() => {
     let isDragging = false;
 
@@ -385,12 +400,17 @@ function App() {
       const translatedX = x - centerX;
       const translatedY = y - centerY;
 
+
+      
+
       const rotatedX = translatedX * Math.sqrt(2) / 2 - translatedY * Math.sqrt(2) / 2;
       const rotatedY = translatedX * Math.sqrt(2) / 2 + translatedY * Math.sqrt(2) / 2;
 
       if (Math.pow(rotatedX, 2) + Math.pow(rotatedY, 2) < Math.pow(radius, 2)) {
         const finalX = rotatedX + centerX;
         const finalY = rotatedY + centerY;
+        setTranslatedXX(translatedX +255);
+      setTranslatedYY(translatedY+255);
 
         sendMessage(JSON.stringify({
           "energy": (finalX - centerX + radius) / (2 * radius)
@@ -644,6 +664,7 @@ function App() {
             <div className="SETTINGS swiper-no-swiping">
 
               <div className="rectangle-2" />
+              <img className="backR" alt="button" src={require('./assets/EMOTIONAL.png')} />
               <button className="btnimg" onClick={e => { setPlay_pause(play_pause === 'play' ? 'pause' : 'play'); changePlay_pause() }}>
                 <div className="PLAY-STOP">
                   <img className="backB" alt="button" src={require('./assets/Ellipse13.png')} />
@@ -651,12 +672,10 @@ function App() {
                 </div>
               </button>
 
-              <img className="line-b" alt="Line" src={require('./assets/Line1.png')} />
-              <div className="text-brightness" draggable="false"><p className='bright'>Brightness</p></div>
 
               <div className="BRIGHTNESS">
 
-                <img className="BRIGHTNESS-ICON" alt="Brightness ICON" src={require('./assets/BRIGHTNESSICON.png')} />
+
                 <div className="SLIDER">
                   <div className="overlap-group-2">
                     <RangeSlider
@@ -686,18 +705,32 @@ function App() {
                     />
                   </div>
                 </div>
-                <img className="SPEED-ICON" alt="Speed ICON" src={require('./assets/SPEEDICON.png')} />
+
               </div>
 
-              <img className="line" alt="Line" src={require('./assets/Line1.png')} />
-              <img className="line-s" alt="Line" src={require('./assets/Line1.png')} />
-              <div className="text-speed" draggable="false"><p className='speed_t'>Speed</p></div>
-              <img className="line-2" alt="Line" src={require('./assets/Line1.png')} />
+              <div className="AUDIOR">
+                <div className="overlap-audior">
+
+                  <div className="overlap-audior2">
+                    <RangeSlider
+                      className="ar_slider"
+                      defaultValue={[0, 1]}
+                      thumbsDisabled={[true, false]}
+                      rangeSlideDisabled={true}
+                      value={AR}
+                      onInput={e => { setAR(e); changeAR(e) }}
+                    />
+                  </div>
+                </div>
+
+              </div>
+
+
             </div>
 
             <div className="EMOTIONAL-CIRCLE swiper-no-swiping" draggable="false" ref={emotionalCircleRef}>
 
-              <div className="overlap-2">
+              <div className="overlap-2  pointer-container">
                 <img className="FLOWER-OF-LIFE" alt="Flower OF LIFE" src={require('./assets/CIRCLE.png')} draggable="false" />
 
                 <div className="text-wrapper-2" draggable="false">stressed</div>
@@ -714,7 +747,13 @@ function App() {
                 <div className="text-wrapper-14" draggable="false">upset</div>
                 <div className="text-wrapper-15" draggable="false">calm</div>
               </div>
-
+              
+              <img className="pointerimg" alt="pointer" src={require('./assets/pointer.png')} 
+               style={{
+                left: `${translatedXX}px`, // Set the left property to use translatedX
+                top: `${translatedYY}px`,  // Set the top property to use translatedY
+              }} />
+              
             </div>
 
           </div>
@@ -864,7 +903,16 @@ function App() {
 
                 <div className='bottom'>
 
-
+                <div className="UP-DOWN">
+                <img className="UPDOWNI" alt="Up" src={require('./assets/UPDOWN.png')} />
+                    <div className='UP-DOWN2' onClick={e => { setBlinds(blinds <= 0.9 ? blinds + 0.1 : 1); changeBlinds(blinds <= 0.9 ? blinds + 0.1 : 1) }}>
+                      
+                    </div>
+                    <div className='UP-DOWN1' onClick={e => { setBlinds(blinds >= 0.1 ? blinds - 0.1 : 0); changeBlinds(blinds >= 0.1 ? blinds - 0.1 : 0) }}>
+                      
+                    </div>
+                    
+                  </div>
 
 
 
@@ -1002,7 +1050,7 @@ function App() {
               </div>
             </div>
 
-            {login == 'correct' ? null :
+            {true ? null :
               <div className="element-LOGIN">
 
                 <div className="overlap-wrapper">

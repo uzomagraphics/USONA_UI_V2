@@ -53,18 +53,29 @@ function App() {
   }, [parentRef]);
 
   const showMore = () => setOpen(!open);
+
+  const [ellipseRotVisible, setEllipseRotVisible] = useState(false);
+
   //////////////////////
 
 
   /////////EXPERIENCE////////////////
   var [experience, setExperience] = useState('');
   const changeExperience = (exp) => {
-    console.log("Send experience = " + exp)
+    console.log("Send experience = " + exp);
+  
+    setEllipseRotVisible(true);
+  
+    // Hide the ellipseRot element after a few seconds (adjust the timeout duration as needed)
+    setTimeout(() => {
+      setEllipseRotVisible(false);
+    }, 2000);
+  
     sendMessage(JSON.stringify({
       "experience": exp
-    }
-    ));
+    }));
   };
+  
 
   /////////EMOTIONAL VALENCE////////
   var [play_pause, setPlay_pause] = useState('play');
