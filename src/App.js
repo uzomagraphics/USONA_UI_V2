@@ -21,6 +21,21 @@ import { Pagination } from "swiper/modules";
 const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
+// Function to rotate a point around another point by a given angle
+const rotatePoint = (point, center, angleDegrees) => {
+  const angleRadians = (Math.PI / 180) * angleDegrees;
+  return {
+    x:
+      Math.cos(angleRadians) * (point.x - center.x) -
+      Math.sin(angleRadians) * (point.y - center.y) +
+      center.x,
+    y:
+      Math.sin(angleRadians) * (point.x - center.x) +
+      Math.cos(angleRadians) * (point.y - center.y) +
+      center.y,
+  };
+};
+
 function App() {
 
 
@@ -401,28 +416,35 @@ function App() {
     };
 
     const processMovement = (x, y) => {
-      const { centerX, centerY, radius } = getCircleProperties();
+      const circle = emotionalCircleRef.current.getBoundingClientRect();
+      const centerX = circle.left + circle.width / 2;
+      const centerY = circle.top + circle.height / 2;
+      const radius = circle.width / 2; // Assuming it's a perfect circle
 
-      const translatedX = x - centerX;
-      const translatedY = y - centerY;
+      // Calculate the position of the pointer in the rotated coordinate system
+      let offsetX = x - centerX;
+      let offsetY = y - centerY;
 
+      // Rotate the coordinate system back by -45 degrees
+      const angle = -45 * (Math.PI / 180); // Convert 45 degrees to radians
+      const rotatedX = offsetX * Math.cos(angle) - offsetY * Math.sin(angle);
+      const rotatedY = offsetX * Math.sin(angle) + offsetY * Math.cos(angle);
 
+      // Check if the pointer is within the circle
+      if (Math.sqrt(rotatedX ** 2 + rotatedY ** 2) < radius) {
+        // Rotate the coordinates back by +45 degrees to correct the position
+        const correctedX = rotatedX * Math.cos(-angle) - rotatedY * Math.sin(-angle);
+        const correctedY = rotatedX * Math.sin(-angle) + rotatedY * Math.cos(-angle);
 
+        // Adjust position by adding center coordinates
+        setTranslatedXX(centerX + correctedX - circle.left);
+        setTranslatedYY(centerY + correctedY - circle.top);
 
-      const rotatedX = translatedX * Math.sqrt(2) / 2 - translatedY * Math.sqrt(2) / 2;
-      const rotatedY = translatedX * Math.sqrt(2) / 2 + translatedY * Math.sqrt(2) / 2;
-
-      if (Math.pow(rotatedX, 2) + Math.pow(rotatedY, 2) < Math.pow(radius, 2)) {
-        const finalX = rotatedX + centerX;
-        const finalY = rotatedY + centerY;
-        setTranslatedXX(translatedX + 255);
-        setTranslatedYY(translatedY + 255);
-
+        // Do your sendMessage calls here if necessary
+        // The energy and positivity should be calculated based on the rotated coordinates
         sendMessage(JSON.stringify({
-          "energy": (finalX - centerX + radius) / (2 * radius)
-        }));
-        sendMessage(JSON.stringify({
-          "positivity": (finalY - centerY + radius) / (2 * radius)
+          "energy": (rotatedX + radius) / (2 * radius),
+          "positivity": (rotatedY + radius) / (2 * radius)
         }));
       }
     };
