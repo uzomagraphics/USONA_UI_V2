@@ -17,13 +17,13 @@ import './App.css';
 // import required modules
 import { Pagination } from "swiper/modules";
 
-const WS_URL = 'ws://192.168.1.72:8000';
-//const WS_URL = 'ws://localhost:8000';
+// const WS_URL = 'ws://192.168.1.72:8000';
+const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
 
-  
+
   // First invocation just for logging when the connection is established.
   useWebSocket(WS_URL, {
     onOpen: () => {
@@ -407,7 +407,7 @@ function App() {
       const translatedY = y - centerY;
 
 
-      
+
 
       const rotatedX = translatedX * Math.sqrt(2) / 2 - translatedY * Math.sqrt(2) / 2;
       const rotatedY = translatedX * Math.sqrt(2) / 2 + translatedY * Math.sqrt(2) / 2;
@@ -415,8 +415,8 @@ function App() {
       if (Math.pow(rotatedX, 2) + Math.pow(rotatedY, 2) < Math.pow(radius, 2)) {
         const finalX = rotatedX + centerX;
         const finalY = rotatedY + centerY;
-        setTranslatedXX(translatedX +255);
-      setTranslatedYY(translatedY+255);
+        setTranslatedXX(translatedX + 255);
+        setTranslatedYY(translatedY + 255);
 
         sendMessage(JSON.stringify({
           "energy": (finalX - centerX + radius) / (2 * radius)
@@ -753,13 +753,13 @@ function App() {
                 <div className="text-wrapper-14" draggable="false">upset</div>
                 <div className="text-wrapper-15" draggable="false">calm</div>
               </div>
-              
-              <img className="pointerimg" alt="pointer" src={require('./assets/pointer.png')} 
-               style={{
-                left: `${translatedXX}px`, // Set the left property to use translatedX
-                top: `${translatedYY}px`,  // Set the top property to use translatedY
-              }} />
-              
+
+              <img className="pointerimg" alt="pointer" src={require('./assets/pointer.png')}
+                style={{
+                  left: `${translatedXX}px`, // Set the left property to use translatedX
+                  top: `${translatedYY}px`,  // Set the top property to use translatedY
+                }} />
+
             </div>
 
           </div>
@@ -909,15 +909,15 @@ function App() {
 
                 <div className='bottom'>
 
-                <div className="UP-DOWN">
-                <img className="UPDOWNI" alt="Up" src={require('./assets/UPDOWN.png')} />
+                  <div className="UP-DOWN">
+                    <img className="UPDOWNI" alt="Up" src={require('./assets/UPDOWN.png')} />
                     <div className='UP-DOWN2' onClick={e => { setBlinds(blinds <= 0.9 ? blinds + 0.1 : 1); changeBlinds(blinds <= 0.9 ? blinds + 0.1 : 1) }}>
-                      
+
                     </div>
                     <div className='UP-DOWN1' onClick={e => { setBlinds(blinds >= 0.1 ? blinds - 0.1 : 0); changeBlinds(blinds >= 0.1 ? blinds - 0.1 : 0) }}>
-                      
+
                     </div>
-                    
+
                   </div>
 
 
@@ -1013,13 +1013,13 @@ function App() {
                   <div className='top'>
 
 
-                    <button className="POSITION" onClick={e => { setMotor(0); changeMotor(0) }}>
+                    <button className="POSITION" onClick={e => { setMotor(1); changeMotor(1) }}>
                       <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION01.png')} />
                     </button>
 
 
 
-                    <button className="POSITION-3" onClick={e => { setMotor(1); changeMotor(1) }}>
+                    <button className="POSITION-3" onClick={e => { setMotor(2); changeMotor(2) }}>
                       <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION03.png')} />
                     </button>
 
@@ -1028,6 +1028,9 @@ function App() {
                 </div>
 
                 <div className='bottom'>
+                  <button className="EMERGENCY-STOP" onClick={e => { setMotor(3); changeMotor(3) }}>
+                    {/* <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION02.png')} /> */}
+                  </button>
 
                   <div className="ON-OFF">
 
