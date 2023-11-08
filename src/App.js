@@ -170,6 +170,23 @@ function App() {
     ));
   };
 
+  //Crestron//
+  const sendCrestronButton1 = () => {
+    console.log("sendCrestronButton1");
+    sendMessage(JSON.stringify({
+      "crestronButton": 1,
+      "type": "public_c"
+    }));
+  };
+
+  const sendCrestronButton2 = () => {
+    console.log("sendCrestronButton2");
+    sendMessage(JSON.stringify({
+      "crestronButton": 2,
+      "type": "public_c"
+    }));
+  };
+
 
   //////////////BLINDS//////////////
   var [blinds, setBlinds] = useState('');
@@ -945,9 +962,9 @@ function App() {
 
 
 
-                  <img className="HALF-OPEN" onClick={e => { setBlinds(0.5); changeBlinds(0.5) }} src={require('./assets/HALFOPEN.png')} />
+                  <img className="HALF-OPEN" onClick={sendCrestronButton1} src={require('./assets/HALFOPEN.png')} alt="Half Open" />
 
-                  <img className="CLOSE" onClick={e => { setBlinds(1); changeBlinds(1) }} src={require('./assets/CLOSE.png')} />
+                  <img className="CLOSE" onClick={sendCrestronButton2} src={require('./assets/CLOSE.png')} alt="Closed" />
 
                 </div>
               </div>
