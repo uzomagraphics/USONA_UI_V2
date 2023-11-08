@@ -111,9 +111,9 @@ function App() {
 
   var [AR, setAR] = useState('');
   const changeAR = (e) => {
-    console.log("Send audioreactivity = " + e[1] / 100)
+    console.log("Send reactivity = " + e[1] / 100)
     sendMessage(JSON.stringify({
-      "audioreactivity": e[1] / 100
+      "reactivity": e[1] / 100
     }
     ));
   };
@@ -297,6 +297,12 @@ function App() {
         setSpeed(prevSpeed => {
           console.log("speed = " + lastJsonMessage.speed);
           return [0, lastJsonMessage.speed * 100];
+        });
+      }
+      if (lastJsonMessage.reactivity) {
+        setAR(prevAR => {
+          console.log("reactivity = " + lastJsonMessage.reactivity);
+          return [0, lastJsonMessage.reactivity * 100];
         });
       }
 
