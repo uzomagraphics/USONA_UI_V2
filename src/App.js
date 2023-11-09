@@ -22,26 +22,16 @@ const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
-
-  // First invocation just for logging when the connection is established.
-  useWebSocket(WS_URL, {
-    onOpen: () => {
-      console.log('WebSocket connection established.');
-    },
+  // Single invocation to destructure sendMessage and lastJsonMessage.
+  const { sendMessage, lastJsonMessage } = useWebSocket(WS_URL, {
+    onOpen: () => console.log('WebSocket connection established.'),
+    onClose: () => console.log('WebSocket disconnected.'),
+    shouldReconnect: (closeEvent) => true, // Always attempt to reconnect
+    reconnectAttempts: Infinity,
+    reconnectInterval: (attempt) => Math.min(10 * 1000, (attempt + 1) ** 2 * 1000),
     share: true,
     filter: () => false,
     retryOnError: true,
-    shouldReconnect: () => true
-  });
-
-  // Second invocation to destructure sendMessage and lastJsonMessage.
-  const { sendMessage, lastJsonMessage } = useWebSocket(WS_URL, {
-    share: true,
-  });
-
-  useWebSocket(WS_URL, {
-    share: true,
-    filter: () => false
   });
 
   //////////SWIPER/////////
