@@ -219,15 +219,6 @@ function App() {
     ));
   };
 
-  var [motorStop, setMotorStop] = useState('ON');
-  const changeMotorStop = () => {
-    console.log("Send motorStop = " + motorStop)
-    sendMessage(JSON.stringify({
-      "motorStop": onOff
-    }
-    ));
-  };
-
   //////////////SYSTEM//////////////
   const [td, setTd] = useState('DOWN');
 
@@ -319,12 +310,6 @@ function App() {
         setSource(prevSource => {
           console.log("source = " + lastJsonMessage.source);
           return lastJsonMessage.source;
-        });
-      }
-      if (lastJsonMessage.motorStop) {
-        setMotorStop(prevMotorStop => {
-          console.log("light motorStop = " + (lastJsonMessage.motorStop === 'ON' ? 'OFF' : 'ON'));
-          return lastJsonMessage.motorStop === 'ON' ? 'OFF' : 'ON';
         });
       }
 
@@ -995,8 +980,8 @@ function App() {
                 </div>
 
                 <div className='bottom'>
-                <div className='motorStop' onClick={e => { setMotorStop(motorStop == 'ON' ? 'OFF' : 'ON'); changeMotorStop() }}>
-                  {motorStop == 'ON' ? <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} /> : <img className="motorstopimg" alt="motor stop" src={require('./assets/ESON.png')} />}
+                <div className='motorStop' onClick={e => { setMotor(3); changeMotor(3) }}>
+                  <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} />
                   </div>
 
                   <div className="ON-OFF">
