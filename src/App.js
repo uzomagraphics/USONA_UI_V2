@@ -786,27 +786,27 @@ function App() {
                         </div>
                         <div className='bottom'>
                           <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
-                          {source == 1 ? <div className="rectangle-4" /> : null}
+                          {source === 1 ? <div className="rectangle-4" /> : null}
                           <div className="rectangle-4btn" onClick={e => { setSource((prevSource) => 1); changeSource(1) }}>
                             <div className="text-wrapper-2">Source 01 - Title</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
-                          {source == 2 ? <div className="rectangle-5" /> : null}
+                          {source === 2 ? <div className="rectangle-5" /> : null}
                           <div className="rectangle-5btn" onClick={e => { setSource((prevSource) => 2); changeSource(2) }}>
                             <div className="text-wrapper-2">Source 02 - Title</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
-                          {source == 3 ? <div className="rectangle-6" /> : null}
+                          {source === 3 ? <div className="rectangle-6" /> : null}
                           <div className="rectangle-6btn" onClick={e => { setSource((prevSource) => 3); changeSource(3) }}>
                             <div className="text-wrapper-2">Source 03 - Title</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
-                          {source == 4 ? <div className="rectangle-7" /> : null}
+                          {source === 4 ? <div className="rectangle-7" /> : null}
                           <div className="rectangle-7btn" onClick={e => { setSource((prevSource) => 4); changeSource(4) }}>
                             <div className="text-wrapper-2">Source 04 - Title</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
-                          {source == 5 ? <div className="rectangle-8" /> : null}
+                          {source === 5 ? <div className="rectangle-8" /> : null}
                           <div className="rectangle-8btn" onClick={e => { setSource((prevSource) => 5); changeSource(5) }}>
                             <div className="text-wrapper-2">Source 05 - Title</div>
                           </div>
@@ -816,8 +816,8 @@ function App() {
                     )
                   }
                   <div className="PLAY-STOP">
-                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
-                      {Audioplay_pause == 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/Play.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')} />}
+                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause === 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
+                      {Audioplay_pause === 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/Play.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')} />}
                     </button>
                   </div>
                 </div>
@@ -892,9 +892,9 @@ function App() {
 
                   <div className="ON-OFF">
 
-                    <div className='on-off-btn' onClick={e => { setOnOff(onOff == 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
+                    <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
                       <div className="overlap-group">
-                        {onOff == 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                        {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                       </div>
                     </div>
 
@@ -990,9 +990,9 @@ function App() {
 
                   <div className="ON-OFF">
 
-                    <div className='on-off-btn' onClick={e => { setOnOff(onOff == 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
+                    <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
                       <div className="overlap-groupOn">
-                        {onOff == 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                        {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                       </div>
                     </div>
 
@@ -1009,7 +1009,7 @@ function App() {
                     <p className="touch-designer">
 
                     </p>
-                    {td == 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
+                    {td === 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
                   </div>
                 </div>
               </div>
@@ -1025,7 +1025,7 @@ function App() {
                     <div className="rectangle" />
                     <div className="overlap" />
                     <div className="div" />
-                    <img className='loginImg' src={require('./assets/LOGIN.png')} />
+                    <img className='loginImg' alt='' src={require('./assets/LOGIN.png')} />
                     <form className='form' onSubmit={handleSubmit}>
                       <div className="PASSWORD">
                         <div className='pass-wrapper'>
