@@ -20,9 +20,9 @@ import { Pagination } from "swiper/modules";
 import { confirmAlert } from 'react-confirm-alert'; // You might need to install this package
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
- const WS_URL = 'ws://192.168.1.72:8000';
+//const WS_URL = 'ws://192.168.1.72:8000';
 //const WS_URL = 'ws://localhost:8000';
-//const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
+const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
   // Single invocation to destructure sendMessage and lastJsonMessage.
@@ -35,7 +35,7 @@ function App() {
     share: true,
     filter: () => false,
     retryOnError: true,
-  });
+      });
 
   //////////SWIPER/////////
   const [swiper, setSwiper] = useState(null);
@@ -396,8 +396,8 @@ function App() {
         // Do your sendMessage calls here if necessary
         // The energy and positivity should be calculated based on the rotated coordinates
         sendMessage(JSON.stringify({
-          "energy": (rotatedX + radius) / (2 * radius),
-          "positivity": (rotatedY + radius) / (2 * radius)
+          "energy": 1 - (rotatedY + radius) / (2 * radius),
+          "positivity": (rotatedX + radius) / (2 * radius)
         }));
       }
     };
