@@ -258,10 +258,6 @@ function App() {
     event.preventDefault();
 
     sendMessage(JSON.stringify({
-      "userName": userName
-    }
-    ));
-    sendMessage(JSON.stringify({
       "password": password
     }
     ));
