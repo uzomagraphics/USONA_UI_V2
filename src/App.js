@@ -654,7 +654,7 @@ function App() {
 
               <div className="rectangle-2" />
               <img className="backR" alt="button" src={require('./assets/EMOTIONAL.png')} />
-              <button className="btnimg" onClick={e => { setPlay_pause(play_pause === 'play' ? 'pause' : 'play'); changePlay_pause() }}>
+              <button className="btnimg" onClick={e => { setPlay_pause('pause'); changePlay_pause() }}>
                 <div className="PLAY-STOP">
                   
                   {play_pause === 'play' ? <img className="img" alt="ESTOP" src={require('./assets/ESTOP.png')} /> : <img className="img" alt="STOP_ACTIVE" src={require('./assets/ESTOP_CLIC.png')} />}
