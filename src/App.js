@@ -20,8 +20,8 @@ import { Pagination } from "swiper/modules";
 import { confirmAlert } from 'react-confirm-alert'; // You might need to install this package
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-// const WS_URL = 'ws://192.168.1.72:8000';
-const WS_URL = 'ws://localhost:8000';
+ const WS_URL = 'ws://192.168.1.72:8000';
+//const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
 function App() {
@@ -209,6 +209,15 @@ function App() {
     ));
   };
 
+  var [motorStop, setMotorStop] = useState('ON');
+  const changeMotorStop = () => {
+    console.log("Send motorStop = " + motorStop)
+    sendMessage(JSON.stringify({
+      "motorStop": onOff
+    }
+    ));
+  };
+
   //////////////SYSTEM//////////////
   const [td, setTd] = useState('DOWN');
 
@@ -306,7 +315,12 @@ function App() {
           return lastJsonMessage.source;
         });
       }
-
+      if (lastJsonMessage.motorStop) {
+        setMotorStop(prevMotorStop => {
+          console.log("light motorStop = " + (lastJsonMessage.motorStop === 'ON' ? 'OFF' : 'ON'));
+          return lastJsonMessage.motorStop === 'ON' ? 'OFF' : 'ON';
+        });
+      }
 
       if (lastJsonMessage.lightBrightness) {
         setVolume2(prevVolume2 => {
@@ -493,7 +507,7 @@ function App() {
                 <div className="LIGHTING">
                   <div className="overlap-3" onClick={e => { swiper.slideTo(4); }}>
                     <img className="BRIGHTNESS-ICON" alt="Brightness ICON" src={require('./assets/BRIGHTNESSICON2.png')} />
-                    <img className="img" alt="Lightingimg" src={require('./assets/LIGHTING.png')} />
+                    <img className="img" alt="Lightingimg" src={require('./assets/ENVIRONMENT.png')} />
                     <img className="line" alt="Line" src={require('./assets/Line1.png')} />
                   </div>
                 </div>
@@ -632,8 +646,8 @@ function App() {
               <img className="backR" alt="button" src={require('./assets/EMOTIONAL.png')} />
               <button className="btnimg" onClick={e => { setPlay_pause(play_pause === 'play' ? 'pause' : 'play'); changePlay_pause() }}>
                 <div className="PLAY-STOP">
-                  <img className="backB" alt="button" src={require('./assets/Ellipse13.png')} />
-                  {play_pause === 'play' ? <img className="img" alt="Play STOP" src={require('./assets/Play.png')} /> : null}
+                  
+                  {play_pause === 'play' ? <img className="img" alt="ESTOP" src={require('./assets/ESTOP.png')} /> : <img className="img" alt="STOP_ACTIVE" src={require('./assets/ESTOP_CLIC.png')} />}
                 </div>
               </button>
 
@@ -698,19 +712,7 @@ function App() {
               <div className="overlap-2  pointer-container">
                 <img className="FLOWER-OF-LIFE" alt="Flower OF LIFE" src={require('./assets/CIRCLE.png')} draggable="false" />
 
-                <div className="text-wrapper-2" draggable="false">stressed</div>
-                <div className="text-wrapper-3" draggable="false">relaxed</div>
-                <div className="text-wrapper-4" draggable="false">nervous</div>
-                <div className="text-wrapper-5" draggable="false">depressed</div>
-                <div className="text-wrapper-6" draggable="false">sad</div>
-                <div className="text-wrapper-7" draggable="false">alert</div>
 
-                <div className="text-wrapper-10" draggable="false">fatigued</div>
-                <div className="text-wrapper-11" draggable="false">happy</div>
-                <div className="text-wrapper-12" draggable="false">excited</div>
-                <div className="text-wrapper-13" draggable="false">serene</div>
-                <div className="text-wrapper-14" draggable="false">upset</div>
-                <div className="text-wrapper-15" draggable="false">calm</div>
               </div>
 
               <img className="pointerimg" alt="pointer" src={require('./assets/pointer.png')}
@@ -819,8 +821,8 @@ function App() {
                     )
                   }
                   <div className="PLAY-STOP">
-                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause === 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
-                      {Audioplay_pause === 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/Play.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/Pause.png')} />}
+                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
+                      {Audioplay_pause == 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/STOP_ACTIVE.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/STOPA.png')} />}
                     </button>
                   </div>
                 </div>
@@ -847,7 +849,7 @@ function App() {
                 alt="Element USONA logo high"
                 src={require('./assets/Logo.png')}
               />
-              <div className="text-wrapper">LIGHTING</div>
+              <div className="text-wrapper">ENVIRONMENT</div>
               <div className="home" onClick={e => { swiper.slideTo(0); }}>
                 <img
                   alt="home"
@@ -987,9 +989,9 @@ function App() {
                 </div>
 
                 <div className='bottom'>
-                  <button className="EMERGENCY-STOP" onClick={e => { setMotor(3); changeMotor(3) }}>
-                    {/* <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION02.png')} /> */}
-                  </button>
+                <div className='motorStop' onClick={e => { setMotorStop(motorStop == 'ON' ? 'OFF' : 'ON'); changeMotorStop() }}>
+                  {motorStop == 'ON' ? <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} /> : <img className="motorstopimg" alt="motor stop" src={require('./assets/ESON.png')} />}
+                  </div>
 
                   <div className="ON-OFF">
 
@@ -1018,7 +1020,7 @@ function App() {
               </div>
             </div>
 
-            {true ? null :
+            {login == 'correct' ? null :
               <div className="element-LOGIN">
 
                 <div className="overlap-wrapper">

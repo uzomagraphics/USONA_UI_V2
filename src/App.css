@@ -164,11 +164,11 @@ body {
 }
 
 .element-HOME .img {
-  height: 6.88%;
-  left: 27.5%;
+  
+  left: 16%;
   position: absolute;
-  top: 12.13%;
-  width: 44.93%;
+  top: 13%;
+  width: 70%;
 }
 
 .element-HOME .line {
@@ -335,8 +335,8 @@ body {
 .text-wrapper {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 20px;
+font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -477,11 +477,11 @@ body {
 }
 
 .element-EMOTIONAL-VALENCE .SETTINGS {
-  left: 61.56vw;
-  top: 3.2vw;
+  left: 66vw;
+  top: 3.1vw;
   position: absolute;
-  width: 24.74vw;
-  height: 55vw;
+  width: 30vw;
+  height: 57vw;
 }
 
 .element-EMOTIONAL-VALENCE .rectangle-2 {
@@ -535,12 +535,12 @@ body {
 }
 
 .element-EMOTIONAL-VALENCE .img {
-  opacity: 0.4;
-  object-fit: cover;
+
   position: absolute;
-  top: 23%;
-  left: 13%;
-  scale: 64%;
+  top:0%;
+  left: 0%;
+
+  width: 100%;
 }
 
 .element-EMOTIONAL-VALENCE .BRIGHTNESS {
@@ -631,7 +631,7 @@ body {
 }
 
 .element-EMOTIONAL-VALENCE .AUDIOR {
-  height: 121px;
+ 
   left: 4%;
   position: absolute;
   top: 78%;
@@ -1031,24 +1031,23 @@ body {
 }
 
 .element-AUDIO-STEP .PLAY-STOP {
-  background-color: #d9d9d92e;
-  border: 1px solid;
-  border-color: #0000001a;
-  border-radius: 47px;
-  box-shadow: 1px 2px 4px #0000001a;
-  left: 27%;
-  position: absolute;
-  top: 73%;
-  width: 12%;
-  height: 17.77%;
-}
-
-.element-AUDIO-STEP .btnimg2 {
   background-color: #d9d9d900;
   border: 1px solid;
   border-color: #00000000;
   border-radius: 47px;
-  box-shadow: 1px 2px 4px #0000001a;
+  box-shadow: 1px 2px 4px #00000000;
+  left: 27%;
+  position: absolute;
+  top: 68.5%;
+  width: 14%;
+  height: 21%;
+}
+
+.element-AUDIO-STEP .btnimg2 {
+  background-color: rgba(255, 0, 0, 0);
+
+border-color: #00000000;
+
   height: 100%;
   left: 0px;
   position: absolute;
@@ -1057,13 +1056,12 @@ body {
 }
 
 .element-AUDIO-STEP .img2 {
-  height: 50%;
-  left: 17%;
+  height: 100%;
+  left: 0%;
   object-fit: cover;
   position: absolute;
-  top: 25%;
-  width: 70%;
-  scale: 75%;
+  top: 0%;
+  width: 100%;
 }
 
 .element-AUDIO-STEP .VOLUME {
@@ -1440,8 +1438,8 @@ body {
 .element-LIGHTNING .text-wrapper {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 30px;
-  font-weight: 400;
+  font-size: 20px;
+font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -1992,13 +1990,12 @@ body {
 .element-MOTOR-CONTROL .text-wrapper {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 20px;
+font-weight: 400;
   position: absolute;
   white-space: nowrap;
-  right: 2vw;
-  top: 40%;
-  left: 35%;
+  right: 7vw;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -2117,7 +2114,7 @@ body {
   height: 25%;
   left: 0px;
   position: absolute;
-  top: 27%;
+  top: 23%;
   width: 100%;
 }
 
@@ -2197,7 +2194,7 @@ body {
   border-radius: 30px;
   box-shadow: 1px 2px 4px #00000000;
   height: 100%;
-  left: 33%;
+  left: 31%;
   position: absolute;
   top: 0;
   width: 17%;
@@ -2283,7 +2280,7 @@ body {
   border-radius: 30px;
   box-shadow: 1px 2px 4px #00000000;
   height: 100%;
-  right: 27%;
+  right: 31%;
   position: absolute;
   top: 0;
   width: 17%;
@@ -2363,9 +2360,24 @@ body {
 .element-MOTOR-CONTROL .ON-OFF {
   position: absolute;
   top: 0%;
-  right: 37%;
+  right: 36%;
   height: 100%;
   width: 13%;
+}
+
+.element-MOTOR-CONTROL .motorStop {
+  position: absolute;
+  top: 12%;
+  left: 32.5%;
+  height: 100%;
+  width: 15%;
+}
+
+.element-MOTOR-CONTROL .motorstopimg {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
 }
 
 .element-MOTOR-CONTROL .overlap-groupOn {
@@ -2387,7 +2399,7 @@ body {
 }
 .element-MOTOR-CONTROL .SYSTEM {
   position: absolute;
-  top: 35%;
+  top: 45%;
   height: 20%;
   width: 100%;
 }
@@ -2407,7 +2419,7 @@ body {
 
 .element-MOTOR-CONTROL .POWER {
   left: 0%;
-
+  opacity: 80%;
   position: absolute;
   top: 0%;
   width: 100%;
@@ -2416,9 +2428,9 @@ body {
 
 .element-MOTOR-CONTROL .TD-STATUS {
   height: 12px;
-  left: 23%;
+  left: 26%;
   position: absolute;
-  top: 28%;
+  top: 31.7%;
   width: 177px;
 }
 
