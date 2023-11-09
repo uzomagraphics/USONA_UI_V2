@@ -17,6 +17,9 @@ import './App.css';
 // import required modules
 import { Pagination } from "swiper/modules";
 
+import { confirmAlert } from 'react-confirm-alert'; // You might need to install this package
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
 // const WS_URL = 'ws://192.168.1.72:8000';
 const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
@@ -209,12 +212,22 @@ function App() {
   //////////////SYSTEM//////////////
   const [td, setTd] = useState('DOWN');
 
-  const sendReboot = () => {
-    console.log("sendReboot")
-    sendMessage(JSON.stringify({
-      "Reboot": "Reboot",
-    }
-    ));
+  const handleReboot = () => {
+    confirmAlert({
+      title: 'Confirm to reboot',
+      message: 'Are you sure you want to reboot the system?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            sendMessage(JSON.stringify({ action: 'reboot' }));
+          },
+        },
+        {
+          label: 'No',
+        },
+      ],
+    });
   };
 
   ////////PASSWORD//////
@@ -991,7 +1004,7 @@ function App() {
 
                 <div className='right'>
                   <div className="SYSTEM">
-                    <div className="REBOOT" onClick={e => { sendReboot() }}>
+                    <div className="REBOOT" onClick={handleReboot}>
                       <img className="POWER" alt="Power" src={require('./assets/REBOOT.png')} />
                     </div>
                   </div>
