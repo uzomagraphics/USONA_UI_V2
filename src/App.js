@@ -21,23 +21,7 @@ import { Pagination } from "swiper/modules";
 const WS_URL = 'ws://localhost:8000';
 //const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 
-// Function to rotate a point around another point by a given angle
-const rotatePoint = (point, center, angleDegrees) => {
-  const angleRadians = (Math.PI / 180) * angleDegrees;
-  return {
-    x:
-      Math.cos(angleRadians) * (point.x - center.x) -
-      Math.sin(angleRadians) * (point.y - center.y) +
-      center.x,
-    y:
-      Math.sin(angleRadians) * (point.x - center.x) +
-      Math.cos(angleRadians) * (point.y - center.y) +
-      center.y,
-  };
-};
-
 function App() {
-
 
   // First invocation just for logging when the connection is established.
   useWebSocket(WS_URL, {
@@ -203,16 +187,6 @@ function App() {
   };
 
 
-  //////////////BLINDS//////////////
-  var [blinds, setBlinds] = useState('');
-  const changeBlinds = (e) => {
-    console.log("Send blinds = " + Math.round(e * 10) / 10)
-    sendMessage(JSON.stringify({
-      "blinds": Math.round(e * 10) / 10
-    }
-    ));
-  };
-
   //////////////LIGHT//////////////
   var [lightBrightness, setLightBrightness] = useState('');
   const changeLightBrightness = (e) => {
@@ -242,14 +216,6 @@ function App() {
     ));
   };
 
-  const sendEmergencyStop = () => {
-    console.log("sendEmergencyStop")
-    sendMessage(JSON.stringify({
-      "EmergencyStop": "STOP",
-    }
-    ));
-  };
-
   //////////////SYSTEM//////////////
   const [td, setTd] = useState('DOWN');
 
@@ -275,42 +241,6 @@ function App() {
     ));
     sendMessage(JSON.stringify({
       "password": password
-    }
-    ));
-  };
-
-  ///////////MODBUS///////////////
-  const sendModbus = (num) => {
-    console.log("sendModbus = " + num)
-    sendMessage(JSON.stringify({
-      "modbusButton": num,
-      "type": "public_c"
-    }
-    ));
-  };
-  const sendModbusSlider = (num, id) => {
-    console.log("sendModbusSlider = " + id + " val = " + num)
-    sendMessage(JSON.stringify({
-      "modbusSlider": num,
-      "type": "modbusSlider" + id
-    }
-    ));
-  };
-
-  ///////////BACNET///////////////
-  const sendBacnet = (num) => {
-    console.log("sendBacnet = " + num)
-    sendMessage(JSON.stringify({
-      "bacnetButton": num,
-      "type": "public_c"
-    }
-    ));
-  };
-  const sendBacnetSlider = (num, id) => {
-    console.log("sendBacnetSlider = " + id + " val = " + num)
-    sendMessage(JSON.stringify({
-      "bacnetSlider": num,
-      "type": "bacnetSlider" + id
     }
     ));
   };
@@ -374,12 +304,6 @@ function App() {
         });
       }
 
-      if (lastJsonMessage.blinds) {
-        setBlinds(prevBlinds => {
-          console.log("blinds = " + lastJsonMessage.blinds);
-          return lastJsonMessage.blinds;
-        });
-      }
 
       if (lastJsonMessage.lightBrightness) {
         setVolume2(prevVolume2 => {
@@ -392,13 +316,6 @@ function App() {
         setOnOff(prevOnOff => {
           console.log("light onOff = " + (lastJsonMessage.onOff === 'ON' ? 'OFF' : 'ON'));
           return lastJsonMessage.onOff === 'ON' ? 'OFF' : 'ON';
-        });
-      }
-
-      if (lastJsonMessage.motor) {
-        setBlinds(prevMotor => {
-          console.log("motor = " + lastJsonMessage.motor);
-          return lastJsonMessage.motor;
         });
       }
 
@@ -433,19 +350,6 @@ function App() {
 
     // Capture the current value of the ref in a local variable
     const currentCircleRef = emotionalCircleRef.current;
-
-    const getCircleProperties = () => {
-      const boundingBox = emotionalCircleRef.current.getBoundingClientRect();
-      const centerX = boundingBox.left + boundingBox.width / 2;
-      const centerY = boundingBox.top + boundingBox.height / 2;
-      const radius = (boundingBox.width + boundingBox.height) / 4;  // Average of width and height divided by 2
-
-      return {
-        centerX,
-        centerY,
-        radius
-      };
-    };
 
     const processMovement = (x, y) => {
       const circle = emotionalCircleRef.current.getBoundingClientRect();
@@ -508,8 +412,6 @@ function App() {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('touchmove', handleTouchMove);
     };
-
-
 
     const stopDrag = () => {
       isDragging = false;
