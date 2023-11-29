@@ -932,8 +932,6 @@ function App() {
               </div>
             </header>
 
-
-
             {login === 'correct' ?
 
               <div className="SETTINGS">
