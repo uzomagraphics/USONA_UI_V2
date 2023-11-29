@@ -998,35 +998,35 @@ function App() {
               <div className="element-LOGIN">
 
                 <div className="overlap-wrapper">
-                  <div className="overlap">
+                  {/* <div className="overlap">
 
                     <div className="rectangleW" />
                     <div className="rectangle" />
                     <div className="overlap" />
-                    <div className="div" />
-                    <img className='loginImg' alt='' src={require('./assets/LOGIN.png')} />
+                    <div className="div" /> */}
+                  <img className='loginImg' alt='' src={require('./assets/LOGIN.png')} />
 
-                    <form className='form' onSubmit={handleSubmit}>
+                  <form className='form' onSubmit={handleSubmit}>
 
-                      <div className="LOGIN">
-                        <input className="rectangle-2" value={userName} type="text" name="uname" required onChange={e => { setUserName(e.target.value) }} />
+                    <div className="LOGIN">
+                      <input className="rectangle-2" value={userName} type="text" name="uname" required onChange={e => { setUserName(e.target.value) }} />
+                    </div>
+
+                    <div className="PASSWORD">
+                      <div className='pass-wrapper'>
+                        <input className="overlap-group" value={password} type="current-password" name="pass" required onChange={e => { setPassword(e.target.value) }} />
                       </div>
+                    </div>
 
-                      <div className="PASSWORD">
-                        <div className='pass-wrapper'>
-                          <input className="overlap-group" value={password} type="current-password" name="pass" required onChange={e => { setPassword(e.target.value) }} />
-                        </div>
+                    <div className="ENTER">
+                      <div className="div-wrapper" >
+                        <button className='submitbtn' type="submit"></button>
                       </div>
+                    </div>
 
-                      <div className="ENTER">
-                        <div className="div-wrapper" >
-                          <button className='submitbtn' type="submit"></button>
-                        </div>
-                      </div>
+                  </form>
 
-                    </form>
-
-                  </div>
+                  {/* </div> */}
                 </div>
 
               </div>
