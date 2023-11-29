@@ -1,28 +1,22 @@
 import React, { useEffect, useState, useRef } from 'react';
 import useWebSocket from 'react-use-websocket';
-
 import autoAnimate from '@formkit/auto-animate'
-
 import RangeSlider from 'react-range-slider-input';
 import "react-range-slider-input/dist/style.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { confirmAlert } from 'react-confirm-alert'; // You might need to install this package
 
-// Import Swiper styles
+// Import Styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 import './App.css';
-
-// import required modules
-import { Pagination } from "swiper/modules";
-
-import { confirmAlert } from 'react-confirm-alert'; // You might need to install this package
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 //  const WS_URL = 'ws://192.168.1.72:8000';
-//const WS_URL = 'ws://localhost:8000';
-const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
+// const WS_URL = 'ws://localhost:8000';
+// const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
+const WS_URL = 'ws://studio-15.local:8000';
 
 function App() {
 
@@ -40,11 +34,8 @@ function App() {
   // Second invocation to destructure sendMessage and lastJsonMessage.
   const { sendMessage, lastJsonMessage } = useWebSocket(WS_URL, {
     share: true,
-  });
-
-  useWebSocket(WS_URL, {
-    share: true,
-    filter: () => false
+    retryOnError: true,
+    shouldReconnect: () => true
   });
 
   //////////SWIPER/////////
@@ -52,8 +43,6 @@ function App() {
   const onSwiperInit = (swiper) => {
     setSwiper(swiper);
   };
-
-
 
   ///////////ANIMATE
   const [open, setOpen] = useState(false);
@@ -68,9 +57,7 @@ function App() {
       autoAnimate(parentRef.current);
     }
   }, [parentRef]);
-
   const showMore = () => setOpen(!open);
-  //////////////////////
 
 
   /////////EXPERIENCE////////////////
@@ -84,6 +71,9 @@ function App() {
   };
 
   /////////EMOTIONAL VALENCE////////
+  const [incomingX, setIncomingX] = useState(null);
+  const [incomingY, setIncomingY] = useState(null);
+
   var [play_pause, setPlay_pause] = useState('play');
   const changePlay_pause = () => {
     console.log("Send play_pause = " + play_pause)
@@ -258,6 +248,12 @@ function App() {
   useEffect(() => {
     if (lastJsonMessage !== null) {
 
+      if (lastJsonMessage.energy !== undefined && lastJsonMessage.positivity !== undefined) {
+        setIncomingX(lastJsonMessage.energy);
+        setIncomingY(lastJsonMessage.positivity);
+        console.log("Received energy = " + lastJsonMessage.energy + "positivity = " + lastJsonMessage.positivity);
+      }
+
       if (lastJsonMessage.experience) {
         setExperience(prevExperience => {
           console.log("exp = " + lastJsonMessage.experience);
@@ -344,8 +340,36 @@ function App() {
   }, [lastJsonMessage]);
 
 
+  ////// Emotion Circle START //////
+  function translateCoordinates(incomingX, incomingY, circle) {
+    // Assuming incomingX and incomingY are between 0 and 1, representing a percentage of the radius
+    const radius = circle.width / 2; // Assuming it's a perfect circle
 
-  //MOUSE POSITION - FLOWER OF LIFE
+    // Convert percentages to pixel values within the circle
+    let posX = (incomingX * 2 - 1) * radius; // Translating to range [-radius, radius]
+    let posY = (incomingY * 2 - 1) * radius; // Translating to range [-radius, radius]
+
+    // Rotate by +45 degrees
+    const angle = -45 * (Math.PI / 180);
+    const rotatedX = posX * Math.cos(angle) - posY * Math.sin(angle);
+    const rotatedY = posX * Math.sin(angle) + posY * Math.cos(angle);
+
+    // Translate the rotated coordinates back to the top-left origin
+    const translatedX = rotatedX + radius;
+    const translatedY = rotatedY + radius;
+
+    return { translatedX, translatedY };
+  }
+
+  useEffect(() => {
+    const circle = emotionalCircleRef.current.getBoundingClientRect();
+    if (incomingX !== null && incomingY !== null && circle) {
+      const { translatedX, translatedY } = translateCoordinates(incomingX, incomingY, circle);
+      setTranslatedXX(translatedX);
+      setTranslatedYY(translatedY);
+    }
+  }, [incomingX, incomingY]);
+
   //This will keep the reference to the DOM node for the "EMOTIONAL-CIRCLE"
   const emotionalCircleRef = useRef(null);
 
@@ -386,9 +410,12 @@ function App() {
 
         // Do your sendMessage calls here if necessary
         // The energy and positivity should be calculated based on the rotated coordinates
+        let energy = 1 - (rotatedY + radius) / (2 * radius);
+        let positivity = (rotatedX + radius) / (2 * radius);
+        console.log("energy = " + energy + "positivity = " + positivity);
         sendMessage(JSON.stringify({
-          "energy": 1 - (rotatedY + radius) / (2 * radius),
-          "positivity": (rotatedX + radius) / (2 * radius)
+          "energy": energy,
+          "positivity": positivity
         }));
       }
     };
@@ -430,7 +457,7 @@ function App() {
     // Attach the start and stop drag event listeners to the specific element
     if (currentCircleRef) {
       currentCircleRef.addEventListener('mousedown', startDrag);
-      currentCircleRef.addEventListener('touchstart', startDrag);
+      currentCircleRef.addEventListener('touchstart', startDrag, { passive: true });// passive removes violation warning in chrome console
       document.addEventListener('mouseup', stopDrag);
       document.addEventListener('touchend', stopDrag);
 
@@ -442,18 +469,13 @@ function App() {
       };
     }
   }, [sendMessage]);
+  ////// Emotion Circle END //////
 
 
 
 
 
-
-
-
-
-
-
-
+  ////// Html //////
   return (
     <>
       <Swiper
@@ -467,10 +489,8 @@ function App() {
         <SwiperSlide>
 
           <div className="element-HOME">
-
             <div className="overlap-wrapper">
               <div className="overlap">
-
                 <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
                 <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
 
@@ -489,7 +509,6 @@ function App() {
                     <div className="ICON-EXP">
                       <div className="overlap-group-2">
                         <img className="ellipse" alt="Ellipse" src={require('./assets/ICONEXP.png')} />
-                        <div className="element-RAIN-FOREST" />
                       </div>
                     </div>
                   </div>
@@ -553,7 +572,6 @@ function App() {
                   src={require('./assets/home.png')}
                 />
               </div>
-
             </header>
 
             <div className="element-RAIN-FOREST">
@@ -637,15 +655,11 @@ function App() {
               <img className="backR" alt="button" src={require('./assets/EMOTIONAL.png')} />
               <button className="btnimg" onClick={e => { setPlay_pause('pause'); changePlay_pause() }}>
                 <div className="PLAY-STOP">
-                  
                   {play_pause === 'play' ? <img className="img" alt="ESTOP" src={require('./assets/ESTOP.png')} /> : <img className="img" alt="STOP_ACTIVE" src={require('./assets/ESTOP_CLIC.png')} />}
                 </div>
               </button>
 
-
               <div className="BRIGHTNESS">
-
-
                 <div className="SLIDER">
                   <div className="overlap-group-2">
                     <RangeSlider
@@ -658,12 +672,10 @@ function App() {
                     />
                   </div>
                 </div>
-
               </div>
 
               <div className="SPEED">
                 <div className="overlap-group-wrapper">
-
                   <div className="overlap-group-2">
                     <RangeSlider
                       className="s_slider"
@@ -675,12 +687,10 @@ function App() {
                     />
                   </div>
                 </div>
-
               </div>
 
               <div className="AUDIOR">
                 <div className="overlap-audior">
-
                   <div className="overlap-audior2">
                     <RangeSlider
                       className="ar_slider"
@@ -692,18 +702,13 @@ function App() {
                     />
                   </div>
                 </div>
-
               </div>
-
 
             </div>
 
             <div className="EMOTIONAL-CIRCLE swiper-no-swiping" draggable="false" ref={emotionalCircleRef}>
-
               <div className="overlap-2  pointer-container">
                 <img className="FLOWER-OF-LIFE" alt="Flower OF LIFE" src={require('./assets/CIRCLE.png')} draggable="false" />
-
-
               </div>
 
               <img className="pointerimg" alt="pointer" src={require('./assets/pointer.png')}
@@ -711,10 +716,10 @@ function App() {
                   left: `${translatedXX}px`, // Set the left property to use translatedX
                   top: `${translatedYY}px`,  // Set the top property to use translatedY
                 }} />
-
             </div>
 
           </div>
+
         </SwiperSlide>
 
         <SwiperSlide>
@@ -740,15 +745,13 @@ function App() {
             </header>
 
             <div className="SETTINGS swiper-no-swiping">
+
               <img className="audio_settings" alt="audio settings" src={require('./assets/audiosettings.png')} />
               <div className="overlap-2">
 
-
                 <div className="VOLUME">
-
                   <div className='slider-wrapper' >
                     <div className="SLIDER">
-
                       <div className="overlap-group-2">
                         <RangeSlider
                           className="a_slider"
@@ -763,7 +766,6 @@ function App() {
                   </div>
                 </div>
 
-
                 <div className='song-icon-wrapper' ref={parentRef}>
                   {!open ?
                     (
@@ -776,53 +778,56 @@ function App() {
                     :
                     (
                       <div className="INPUT-SOURCE">
+
                         <div className='top'>
                           <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
                           <img className="BACK" alt="Back" src={require('./assets/BACK.png')} onClick={showMore} />
                         </div>
+
                         <div className='bottom'>
                           <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
                           {source === 1 ? <div className="rectangle-4" /> : null}
                           <div className="rectangle-4btn" onClick={e => { setSource((prevSource) => 1); changeSource(1) }}>
-                            <div className="text-wrapper-2">Source 01 - Title</div>
+                            <div className="text-wrapper-2">Experience Audio</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
                           {source === 2 ? <div className="rectangle-5" /> : null}
                           <div className="rectangle-5btn" onClick={e => { setSource((prevSource) => 2); changeSource(2) }}>
-                            <div className="text-wrapper-2">Source 02 - Title</div>
+                            <div className="text-wrapper-2">Spotify</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
                           {source === 3 ? <div className="rectangle-6" /> : null}
                           <div className="rectangle-6btn" onClick={e => { setSource((prevSource) => 3); changeSource(3) }}>
-                            <div className="text-wrapper-2">Source 03 - Title</div>
+                            <div className="text-wrapper-2">Sonos</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
                           {source === 4 ? <div className="rectangle-7" /> : null}
                           <div className="rectangle-7btn" onClick={e => { setSource((prevSource) => 4); changeSource(4) }}>
-                            <div className="text-wrapper-2">Source 04 - Title</div>
+                            <div className="text-wrapper-2">XLR Stereo</div>
                             <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                           </div>
                           {source === 5 ? <div className="rectangle-8" /> : null}
                           <div className="rectangle-8btn" onClick={e => { setSource((prevSource) => 5); changeSource(5) }}>
-                            <div className="text-wrapper-2">Source 05 - Title</div>
+                            <div className="text-wrapper-2">XLR Ambisonic</div>
                           </div>
-
                         </div>
+
                       </div>
                     )
                   }
+
                   <div className="PLAY-STOP">
-                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause == 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
-                      {Audioplay_pause == 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/STOP_ACTIVE.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/STOPA.png')} />}
+                    <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause === 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>
+                      {Audioplay_pause === 'play' ? <img className="img2" alt="Play STOP" src={require('./assets/STOP_ACTIVE.png')} /> : <img className="img2" alt="Play STOP" src={require('./assets/STOPA.png')} />}
                     </button>
                   </div>
+
                 </div>
 
               </div>
 
-
-
             </div>
+
           </div>
 
         </SwiperSlide>
@@ -830,7 +835,6 @@ function App() {
         <SwiperSlide>
 
           <div className="element-LIGHTNING">
-
             <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
             <div className="rectangle" />
 
@@ -856,29 +860,16 @@ function App() {
               </div>
 
               <div className="MOTOR-CONTROL swiper-no-swiping">
-
-
-
                 <div className='bottom'>
-
                   <div className="UP-DOWN">
                     <img className="UPDOWNI" alt="Up" src={require('./assets/UPDOWN.png')} />
                     <div className='UP-DOWN2' onClick={sendCrestronButton3} >
-
                     </div>
                     <div className='UP-DOWN1' onClick={sendCrestronButton4} >
-
                     </div>
-
                   </div>
-
-
-
-
                   <img className="HALF-OPEN" onClick={sendCrestronButton1} src={require('./assets/HALFOPEN.png')} alt="Half Open" />
-
                   <img className="CLOSE" onClick={sendCrestronButton2} src={require('./assets/CLOSE.png')} alt="Closed" />
-
                 </div>
               </div>
 
@@ -887,20 +878,16 @@ function App() {
                 <div className='abajo-down'>
 
                   <div className="ON-OFF">
-
                     <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
                       <div className="overlap-group">
                         {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                       </div>
                     </div>
-
                   </div>
 
                   <div className="BRIGHTNESS swiper-no-swiping">
-
                     <div className="SLIDER">
                       <div className="overlap-group-2">
-
                         <RangeSlider
                           className="b_slider"
                           defaultValue={[0, 1]}
@@ -919,16 +906,11 @@ function App() {
 
             </div>
 
-
-
           </div>
-
 
         </SwiperSlide>
 
         <SwiperSlide>
-
-
 
           <div className="element-MOTOR-CONTROL">
 
@@ -952,66 +934,62 @@ function App() {
 
             <div className="SETTINGS">
               <div className="overlap-2">
+
                 <img className="MC" alt="Line" src={require('./assets/MC.png')} />
-                <div className="overlap-group-2">
-
-                </div>
-
+                <div className="overlap-group-2" />
 
                 <div className="MOTOR-CONTROL">
                   <div className='posText'>
-
                   </div>
                   <div className='top'>
-
 
                     <button className="POSITION" onClick={e => { setMotor(1); changeMotor(1) }}>
                       <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION01.png')} />
                     </button>
 
-
-
                     <button className="POSITION-3" onClick={e => { setMotor(2); changeMotor(2) }}>
                       <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION03.png')} />
                     </button>
-
 
                   </div>
                 </div>
 
                 <div className='bottom'>
-                <div className='motorStop' onClick={e => { setMotor(3); changeMotor(3) }}>
-                  <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} />
+
+                  <div className='motorStop' onClick={e => { setMotor(3); changeMotor(3) }}>
+                    <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} />
                   </div>
 
                   <div className="ON-OFF">
-
                     <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
                       <div className="overlap-groupOn">
                         {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                       </div>
                     </div>
-
                   </div>
+
                 </div>
 
                 <div className='right'>
+
                   <div className="SYSTEM">
                     <div className="REBOOT" onClick={handleReboot}>
                       <img className="POWER" alt="Power" src={require('./assets/REBOOT.png')} />
                     </div>
                   </div>
+
                   <div className="TD-STATUS">
                     <p className="touch-designer">
-
                     </p>
                     {td === 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
                   </div>
+
                 </div>
+
               </div>
             </div>
 
-            {login == 'correct' ? null :
+            {login === 'correct' ? null :
               <div className="element-LOGIN">
 
                 <div className="overlap-wrapper">
@@ -1022,48 +1000,41 @@ function App() {
                     <div className="overlap" />
                     <div className="div" />
                     <img className='loginImg' alt='' src={require('./assets/LOGIN.png')} />
+
                     <form className='form' onSubmit={handleSubmit}>
-                      <div className="PASSWORD">
-                        <div className='pass-wrapper'>
 
-                          <input className="overlap-group" value={password} type="password" name="pass" required onChange={e => { setPassword(e.target.value) }} />
-
-
-                        </div>
-
-                      </div>
                       <div className="LOGIN">
-
-
                         <input className="rectangle-2" value={userName} type="text" name="uname" required onChange={e => { setUserName(e.target.value) }} />
                       </div>
+
+                      <div className="PASSWORD">
+                        <div className='pass-wrapper'>
+                          <input className="overlap-group" value={password} type="current-password" name="pass" required onChange={e => { setPassword(e.target.value) }} />
+                        </div>
+                      </div>
+
                       <div className="ENTER">
                         <div className="div-wrapper" >
-                          <button className='submitbtn' type="submit">
-
-                          </button>
+                          <button className='submitbtn' type="submit"></button>
                         </div>
                       </div>
 
                     </form>
 
-
                   </div>
                 </div>
+
               </div>
             }
-
 
           </div>
 
         </SwiperSlide>
 
-
-
       </Swiper>
     </>
   );
-}
 
+}
 
 export default App;
