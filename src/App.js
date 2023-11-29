@@ -932,64 +932,69 @@ function App() {
               </div>
             </header>
 
-            <div className="SETTINGS">
-              <div className="overlap-2">
 
-                <img className="MC" alt="Line" src={require('./assets/MC.png')} />
-                <div className="overlap-group-2" />
 
-                <div className="MOTOR-CONTROL">
-                  <div className='posText'>
-                  </div>
-                  <div className='top'>
+            {login === 'correct' ?
 
-                    <button className="POSITION" onClick={e => { setMotor(1); changeMotor(1) }}>
-                      <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION01.png')} />
-                    </button>
+              <div className="SETTINGS">
+                <div className="overlap-2">
 
-                    <button className="POSITION-3" onClick={e => { setMotor(2); changeMotor(2) }}>
-                      <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION03.png')} />
-                    </button>
+                  <img className="MC" alt="Line" src={require('./assets/MC.png')} />
+                  <div className="overlap-group-2" />
 
-                  </div>
-                </div>
+                  <div className="MOTOR-CONTROL">
+                    <div className='posText'>
+                    </div>
+                    <div className='top'>
 
-                <div className='bottom'>
+                      <button className="POSITION" onClick={e => { setMotor(1); changeMotor(1) }}>
+                        <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION01.png')} />
+                      </button>
 
-                  <div className='motorStop' onClick={e => { setMotor(3); changeMotor(3) }}>
-                    <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} />
+                      <button className="POSITION-3" onClick={e => { setMotor(2); changeMotor(2) }}>
+                        <img className="POSITIONbtn" alt="Rectangle" src={require('./assets/POSITION03.png')} />
+                      </button>
+
+                    </div>
                   </div>
 
-                  <div className="ON-OFF">
-                    <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
-                      <div className="overlap-groupOn">
-                        {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                  <div className='bottom'>
+
+                    <div className='motorStop' onClick={e => { setMotor(3); changeMotor(3) }}>
+                      <img className="motorstopimg" alt="motor stop" src={require('./assets/ESOF.png')} />
+                    </div>
+
+                    <div className="ON-OFF">
+                      <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
+                        <div className="overlap-groupOn">
+                          {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                        </div>
                       </div>
                     </div>
+
                   </div>
 
-                </div>
+                  <div className='right'>
 
-                <div className='right'>
-
-                  <div className="SYSTEM">
-                    <div className="REBOOT" onClick={handleReboot}>
-                      <img className="POWER" alt="Power" src={require('./assets/REBOOT.png')} />
+                    <div className="SYSTEM">
+                      <div className="REBOOT" onClick={handleReboot}>
+                        <img className="POWER" alt="Power" src={require('./assets/REBOOT.png')} />
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="TD-STATUS">
-                    <p className="touch-designer">
-                    </p>
-                    {td === 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
+                    <div className="TD-STATUS">
+                      <p className="touch-designer">
+                      </p>
+                      {td === 'UP' ? <div className="ellipse" /> : <div className="ellipse2" />}
+                    </div>
+
                   </div>
 
                 </div>
-
               </div>
-            </div>
 
-            {login === 'correct' ? null :
+              :
+
               <div className="element-LOGIN">
 
                 <div className="overlap-wrapper">
