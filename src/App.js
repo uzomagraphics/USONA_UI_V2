@@ -767,54 +767,46 @@ function App() {
                 </div>
 
                 <div className='song-icon-wrapper' ref={parentRef}>
-                  {!open ?
-                    (
-                      <div>
-                        <div className='icon-wrapper' onClick={showMore}></div>
-                        <div className='song-wrapper'>
-                        </div>
+
+                  <div className="INPUT-SOURCE">
+
+                    <div className='top'>
+                      <p className="text-wrapper-7">Source:</p>
+                      <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
+
+                    </div>
+
+                    <div className='bottom'>
+                      <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
+                      {source === 1 ? <div className="rectangle-4" /> : null}
+                      <div className="rectangle-4btn" onClick={e => { setSource((prevSource) => 1); changeSource(1) }}>
+                        <div className="text-wrapper-2">Experience Audio</div>
+                        <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                       </div>
-                    )
-                    :
-                    (
-                      <div className="INPUT-SOURCE">
-
-                        <div className='top'>
-                          <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
-                          <img className="BACK" alt="Back" src={require('./assets/BACK.png')} onClick={showMore} />
-                        </div>
-
-                        <div className='bottom'>
-                          <img className="line-4" alt="Line" src={require('./assets/LineAudio2.png')} />
-                          {source === 1 ? <div className="rectangle-4" /> : null}
-                          <div className="rectangle-4btn" onClick={e => { setSource((prevSource) => 1); changeSource(1) }}>
-                            <div className="text-wrapper-2">Experience Audio</div>
-                            <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
-                          </div>
-                          {source === 2 ? <div className="rectangle-5" /> : null}
-                          <div className="rectangle-5btn" onClick={e => { setSource((prevSource) => 2); changeSource(2) }}>
-                            <div className="text-wrapper-2">Spotify</div>
-                            <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
-                          </div>
-                          {source === 3 ? <div className="rectangle-6" /> : null}
-                          <div className="rectangle-6btn" onClick={e => { setSource((prevSource) => 3); changeSource(3) }}>
-                            <div className="text-wrapper-2">Sonos</div>
-                            <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
-                          </div>
-                          {source === 4 ? <div className="rectangle-7" /> : null}
-                          <div className="rectangle-7btn" onClick={e => { setSource((prevSource) => 4); changeSource(4) }}>
-                            <div className="text-wrapper-2">XLR Stereo</div>
-                            <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
-                          </div>
-                          {source === 5 ? <div className="rectangle-8" /> : null}
-                          <div className="rectangle-8btn" onClick={e => { setSource((prevSource) => 5); changeSource(5) }}>
-                            <div className="text-wrapper-2">XLR Ambisonic</div>
-                          </div>
-                        </div>
-
+                      {source === 2 ? <div className="rectangle-5" /> : null}
+                      <div className="rectangle-5btn" onClick={e => { setSource((prevSource) => 2); changeSource(2) }}>
+                        <div className="text-wrapper-2">Spotify</div>
+                        <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                       </div>
-                    )
-                  }
+                      {source === 3 ? <div className="rectangle-6" /> : null}
+                      <div className="rectangle-6btn" onClick={e => { setSource((prevSource) => 3); changeSource(3) }}>
+                        <div className="text-wrapper-2">Sonos</div>
+                        <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+                      </div>
+                      {source === 4 ? <div className="rectangle-7" /> : null}
+                      <div className="rectangle-7btn" onClick={e => { setSource((prevSource) => 4); changeSource(4) }}>
+                        <div className="text-wrapper-2">XLR Stereo</div>
+                        <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
+                      </div>
+                      {source === 5 ? <div className="rectangle-8" /> : null}
+                      <div className="rectangle-8btn" onClick={e => { setSource((prevSource) => 5); changeSource(5) }}>
+                        <div className="text-wrapper-2">XLR Ambisonic</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
 
                   <div className="PLAY-STOP">
                     <button className="btnimg2" onClick={e => { setAudioPlay_pause(Audioplay_pause === 'play' ? 'pause' : 'play'); changeAudioPlay_pause() }}>

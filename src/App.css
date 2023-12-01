@@ -164,7 +164,6 @@ body {
 }
 
 .element-HOME .img {
-  
   left: 16%;
   position: absolute;
   top: 13%;
@@ -336,7 +335,7 @@ body {
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 20px;
-font-weight: 400;
+  font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -535,9 +534,8 @@ font-weight: 400;
 }
 
 .element-EMOTIONAL-VALENCE .img {
-
   position: absolute;
-  top:0%;
+  top: 0%;
   left: 0%;
 
   width: 100%;
@@ -631,7 +629,6 @@ font-weight: 400;
 }
 
 .element-EMOTIONAL-VALENCE .AUDIOR {
- 
   left: 4%;
   position: absolute;
   top: 78%;
@@ -1046,7 +1043,7 @@ font-weight: 400;
 .element-AUDIO-STEP .btnimg2 {
   background-color: rgba(255, 0, 0, 0);
 
-border-color: #00000000;
+  border-color: #00000000;
 
   height: 100%;
   left: 0px;
@@ -1299,6 +1296,19 @@ border-color: #00000000;
   white-space: nowrap;
 }
 
+.element-AUDIO-STEP .text-wrapper-7 {
+  color: #0000004c;
+  font-family: "Circular Std-Book", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  left: 8%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  width: 80%;
+  white-space: nowrap;
+}
+
 /*AUDIOBOXEsss////*/
 .element-AUDIO-STEP .rectangle-4btn {
   background-color: #d9d9d900;
@@ -1439,7 +1449,7 @@ border-color: #00000000;
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 20px;
-font-weight: 400;
+  font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
@@ -1991,7 +2001,7 @@ font-weight: 400;
   color: #0000004c;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 20px;
-font-weight: 400;
+  font-weight: 400;
   position: absolute;
   white-space: nowrap;
   right: 7vw;
