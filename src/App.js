@@ -15,9 +15,8 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 //  const WS_URL = 'ws://192.168.1.72:8000';
 // const WS_URL = 'ws://localhost:8000';
-// const WS_URL = 'ws://usona-led-pulse.promega.com:8000';
 // const WS_URL = 'ws://studio-15.local:8000';
-const WS_URL = 'ws://10.36.112.91:8000'
+// const WS_URL = 'ws://10.36.112.91:8000'
 
 
 function App() {
