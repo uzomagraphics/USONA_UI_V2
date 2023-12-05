@@ -697,6 +697,7 @@ function App() {
                     <RangeSlider
                       className="ar_slider"
                       defaultValue={[0, 1]}
+                      max={400}
                       thumbsDisabled={[true, false]}
                       rangeSlideDisabled={true}
                       value={AR}
