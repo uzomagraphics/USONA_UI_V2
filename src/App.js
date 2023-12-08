@@ -30,14 +30,22 @@ function App() {
     share: true,
     filter: () => false,
     retryOnError: true,
-    shouldReconnect: () => true
+    shouldReconnect: () => true,
+    reconnectAttempts: 99999,
+    //attemptNumber will be 0 the first time it attempts to reconnect, so this equation results in a reconnect pattern of 1 second, 2 seconds, 4 seconds, 8 seconds, and then caps at 10 seconds until the maximum number of attempts is reached
+    reconnectInterval: (attemptNumber) =>
+      Math.min(Math.pow(2, attemptNumber) * 1000, 10000)
   });
 
   // Second invocation to destructure sendMessage and lastJsonMessage.
   const { sendMessage, lastJsonMessage } = useWebSocket(WS_URL, {
     share: true,
     retryOnError: true,
-    shouldReconnect: () => true
+    shouldReconnect: () => true,
+    reconnectAttempts: 99999,
+    //attemptNumber will be 0 the first time it attempts to reconnect, so this equation results in a reconnect pattern of 1 second, 2 seconds, 4 seconds, 8 seconds, and then caps at 10 seconds until the maximum number of attempts is reached
+    reconnectInterval: (attemptNumber) =>
+      Math.min(Math.pow(2, attemptNumber) * 1000, 10000)
   });
 
   //////////SWIPER/////////
@@ -217,12 +225,13 @@ function App() {
   const handleReboot = () => {
     confirmAlert({
       title: 'Confirm to reboot',
-      message: 'Are you sure you want to reboot the system?',
+      message: 'Are you sure you want to reboot the whole system? After confirming please wait 3 minutes for the system to fully reboot.',
       buttons: [
         {
           label: 'Yes',
           onClick: () => {
             sendMessage(JSON.stringify({ action: 'reboot' }));
+
           },
         },
         {
@@ -582,6 +591,7 @@ function App() {
               <button className="btnimg" onClick={e => { changeExperience('forest'); setExperience('forest'); }}>
                 <img className="img" alt="Element RAIN FOREST" src={require('./assets/RAINFOREST.png')} />
               </button>
+              {/* <div className='text-wrapper' style="float:bottom;">RAIN FOREST</div> */}
             </div>
 
             <div className="element-OCEAN">
@@ -788,22 +798,22 @@ function App() {
                       </div>
                       {source === 2 ? <div className="rectangle-5" /> : null}
                       <div className="rectangle-5btn" onClick={e => { setSource((prevSource) => 2); changeSource(2) }}>
-                        <div className="text-wrapper-2">Spotify</div>
+                        <div className="text-wrapper-2">Sonos</div>
                         <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                       </div>
                       {source === 3 ? <div className="rectangle-6" /> : null}
                       <div className="rectangle-6btn" onClick={e => { setSource((prevSource) => 3); changeSource(3) }}>
-                        <div className="text-wrapper-2">Sonos</div>
+                        <div className="text-wrapper-2">XLR Stereo</div>
                         <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                       </div>
                       {source === 4 ? <div className="rectangle-7" /> : null}
                       <div className="rectangle-7btn" onClick={e => { setSource((prevSource) => 4); changeSource(4) }}>
-                        <div className="text-wrapper-2">XLR Stereo</div>
+                        <div className="text-wrapper-2">XLR Ambisonic</div>
                         <img className="line-bottom" alt="Line" src={require('./assets/Line4.png')} />
                       </div>
                       {source === 5 ? <div className="rectangle-8" /> : null}
                       <div className="rectangle-8btn" onClick={e => { setSource((prevSource) => 5); changeSource(5) }}>
-                        <div className="text-wrapper-2">XLR Ambisonic</div>
+                        <div className="text-wrapper-2"></div>
                       </div>
                     </div>
 
@@ -1029,7 +1039,7 @@ function App() {
 
         </SwiperSlide>
 
-      </Swiper>
+      </Swiper >
     </>
   );
 
