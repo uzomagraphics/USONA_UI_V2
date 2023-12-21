@@ -93,6 +93,12 @@ function App() {
     ));
   };
 
+  window.oncontextmenu = function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+
   var [brightness, setBrightness] = useState('');
   const changeBrightness = (e) => {
     console.log("Send brightness = " + e[1] / 100)
@@ -728,7 +734,8 @@ function App() {
                 style={{
                   left: `${translatedXX}px`, // Set the left property to use translatedX
                   top: `${translatedYY}px`,  // Set the top property to use translatedY
-                }} />
+                }}
+              />
             </div>
 
           </div>
