@@ -225,6 +225,15 @@ function App() {
     ));
   };
 
+  var [motorOnOff, setMotorOnOff] = useState('ON');
+  const changeMotorOnOff = () => {
+    console.log("Send motor onOff = " + motorOnOff)
+    sendMessage(JSON.stringify({
+      "motorOnOff": motorOnOff
+    }
+    ));
+  };
+
   //////////////SYSTEM//////////////
   const [td, setTd] = useState('DOWN');
 
@@ -337,6 +346,13 @@ function App() {
         setOnOff(prevOnOff => {
           console.log("light onOff = " + (lastJsonMessage.onOff === 'ON' ? 'OFF' : 'ON'));
           return lastJsonMessage.onOff === 'ON' ? 'OFF' : 'ON';
+        });
+      }
+
+      if (lastJsonMessage.motorOnOff) {
+        setMotorOnOff(prevMotorOnOff => {
+          console.log("motor onOff = " + (lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON'));
+          return lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON';
         });
       }
 
@@ -975,9 +991,9 @@ function App() {
                     </div>
 
                     <div className="ON-OFF">
-                      <div className='on-off-btn' onClick={e => { setOnOff(onOff === 'ON' ? 'OFF' : 'ON'); changeOnOff() }}>
+                      <div className='on-off-btn' onClick={e => { setMotorOnOff(motorOnOff === 'ON' ? 'OFF' : 'ON'); changeMotorOnOff() }}>
                         <div className="overlap-groupOn">
-                          {onOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
+                          {motorOnOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                         </div>
                       </div>
                     </div>
