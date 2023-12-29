@@ -2925,3 +2925,8 @@ body {
 .a_slider .range-slider__thumb[data-upper] {
   background: #e3e3e38a;
 }
+
+.slider-disabled {
+  filter: grayscale(100%); /* Makes the slider look gray */
+  opacity: 0.6; /* Slightly fades the slider for a disabled look */
+}

@@ -727,9 +727,10 @@ function App() {
                 <div className="overlap-audior">
                   <div className="overlap-audior2">
                     <RangeSlider
-                      className="ar_slider"
+                      className={`ar_slider ${experience !== 'spiral' && experience !== 'reactive2' ? 'slider-disabled' : ''}`}
                       defaultValue={[0, 1]}
                       max={400}
+                      disabled={experience !== 'spiral' && experience !== 'reactive2'}
                       thumbsDisabled={[true, false]}
                       rangeSlideDisabled={true}
                       value={AR}
