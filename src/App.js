@@ -808,7 +808,6 @@ function App() {
                   <div className="INPUT-SOURCE">
 
                     <div className='top'>
-                      <p className="text-wrapper-7">Source:</p>
                       <img className="SONG-ICON2" alt="Song ICON" src={require('./assets/SONGICON.png')} />
 
                     </div>
