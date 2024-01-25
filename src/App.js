@@ -665,8 +665,12 @@ function App() {
         <SwiperSlide>
 
           <div className="element-EMOTIONAL-VALENCE">
-            <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
-            <img className="Promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
+            
+          <div className="overlap-wrapper">
+
+          <img className="Promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
+          <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
+
 
             <header className="HEADER">
               <img
@@ -682,6 +686,7 @@ function App() {
                 />
               </div>
             </header>
+            
 
             <div className="SETTINGS swiper-no-swiping">
 
@@ -754,6 +759,7 @@ function App() {
                 }}
               />
             </div>
+          </div>
 
           </div>
 
@@ -863,8 +869,8 @@ function App() {
         <SwiperSlide>
 
           <div className="element-LIGHTNING">
+            <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
             <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
-            <div className="rectangle" />
 
             <header className="HEADER">
               <img
@@ -941,7 +947,8 @@ function App() {
         <SwiperSlide>
 
           <div className="element-MOTOR-CONTROL">
-
+            
+          <img className="rectangle" alt="Rectangle" src={require('./assets/Rectangle21.png')} />
             <img className="promousonalogowhite" alt="Promousonalogowhite" src={require('./assets/USONABKG.png')} />
             <div className="rectangle" />
 

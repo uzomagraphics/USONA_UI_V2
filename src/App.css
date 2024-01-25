@@ -65,6 +65,7 @@ body {
 .element-HOME .div {
   background-color: #ffffff;
   box-shadow: 0px 5px 20px #0000001a;
+
   height: 75px;
   left: 0;
   position: absolute;
@@ -84,6 +85,9 @@ body {
   top: 15vw;
   width: 16.56vw;
   height: 34.63vw;
+  border-width: 5px;
+  border-color: #0073e6;
+  
 }
 
 .element-HOME .overlap-2 {
@@ -93,6 +97,8 @@ body {
   height: 100%;
   position: relative;
   width: 100%;
+  border-color: #ff0000;
+
 }
 
 .element-HOME .EXPERIENCES {
@@ -102,6 +108,7 @@ body {
   top: 5%;
   width: 65%;
 }
+
 
 .element-HOME .ICON-EXP {
   height: 25.34%;
@@ -332,9 +339,9 @@ body {
 }
 
 .text-wrapper {
-  color: #0000004c;
+  color: #00000080;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 400;
   position: absolute;
   white-space: nowrap;
@@ -348,7 +355,7 @@ body {
   right: 3vw;
   top: 47%;
   transform: translateY(-50%);
-  scale: 80%;
+  scale: 90%;
 }
 
 .element-EXPERIENCES .ellipse {
@@ -455,17 +462,22 @@ body {
 .element-EMOTIONAL-VALENCE .overlap-wrapper {
   background-color: #ffffff;
   height: 100%;
-  overflow: hidden;
   width: 100%;
 }
 
 .element-EMOTIONAL-VALENCE .promousonalogowhite {
   height: 100%;
   width: 100%;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
+  }
+
+  .element-EMOTIONAL-VALENCE .HEADER {
+    background-color: white;
+    height: 4vw;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 15px 10px -15px #0000001a;
+  }
 
 .element-EMOTIONAL-VALENCE .rectangle {
   height: 100%;
@@ -1150,7 +1162,7 @@ body {
 }
 
 .element-AUDIO-STEP .line-4 {
-  height: 1px;
+  height: 2px;
   left: 0px;
   object-fit: cover;
   position: absolute;
@@ -1213,12 +1225,12 @@ body {
 }
 
 .element-AUDIO-STEP .line-bottom {
-  height: 3px;
-  left: 0px;
+  height: 5px;
+  left: -8px;
   object-fit: cover;
   position: absolute;
   top: 100%;
-  width: 100%;
+  width: 105%;
 }
 
 .element-AUDIO-STEP .SONG-ICON2 {
@@ -1235,9 +1247,9 @@ body {
   top: 30%;
 }
 .element-AUDIO-STEP .text-wrapper-2 {
-  color: #0000004c;
+  color: #00000080;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   left: 17%;
   letter-spacing: 0;
@@ -1413,7 +1425,6 @@ body {
 }
 
 .element-LIGHTNING .rectangle {
-  background-color: #d0e2ff33;
   height: 100%;
   left: 0;
   position: absolute;
@@ -1446,9 +1457,9 @@ body {
 }
 
 .element-LIGHTNING .text-wrapper {
-  color: #0000004c;
+  color: #00000080;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 400;
   position: absolute;
   white-space: nowrap;
@@ -1457,7 +1468,7 @@ body {
   transform: translateY(-50%);
 }
 .element-LIGHTNING .textLight {
-  color: #0000004c;
+  color: #00000080;
   font-family: "Circular Std-Book", Helvetica;
   font-size: 30px;
   font-weight: 400;
@@ -1475,7 +1486,7 @@ body {
   height: 37.8vw;
   left: 30vw;
   position: absolute;
-  top: 11vw;
+  top: 13vw;
   width: 37vw;
 }
 
@@ -1965,7 +1976,7 @@ body {
 }
 
 .element-MOTOR-CONTROL .rectangle {
-  background-color: #d0e2ff33;
+
   height: 100%;
   left: 0;
   position: absolute;
@@ -1998,9 +2009,9 @@ body {
 }
 
 .element-MOTOR-CONTROL .text-wrapper {
-  color: #0000004c;
+  color: #00000080;
   font-family: "Circular Std-Book", Helvetica;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 400;
   position: absolute;
   white-space: nowrap;
