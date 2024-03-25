@@ -358,7 +358,6 @@ function App() {
         //if we get a motor on off message, we should update the motorOnOff state to reflect the current state of the motor and send that to the ui
         //this way the ui will always reflect the current state of the motor
         setMotorOnOff(lastJsonMessage.motorOnOff);
-        broadcastMessageToUi(lastJsonMessage.motorOnOff);
       }
 
       if (lastJsonMessage.TD) {
