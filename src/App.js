@@ -225,13 +225,14 @@ function App() {
     ));
   };
 
-  var [motorOnOff, setMotorOnOff] = useState('ON');
+  var [motorOnOff, setMotorOnOff] = useState('OFF');
   const changeMotorOnOff = () => {
-    console.log("Send motor onOff = " + motorOnOff)
+    const newMotorOnOff = motorOnOff === 'ON' ? 'OFF' : 'ON';
+    console.log("Send motor onOff = " + newMotorOnOff)
     sendMessage(JSON.stringify({
-      "motorOnOff": motorOnOff
-    }
-    ));
+      "motorOnOff": newMotorOnOff
+    }));
+    setMotorOnOff(newMotorOnOff);
   };
 
   //////////////SYSTEM//////////////
@@ -349,11 +350,15 @@ function App() {
         });
       }
 
-      if (lastJsonMessage.motorOnOff) {
-        setMotorOnOff(prevMotorOnOff => {
-          console.log("motor onOff = " + (lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON'));
-          return lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON';
-        });
+      if (lastJsonMessage.motorOnOff) { 
+        // setMotorOnOff(prevMotorOnOff => {
+        //   console.log("motor onOff = " + (lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON'));
+        //   return lastJsonMessage.motorOnOff === 'ON' ? 'OFF' : 'ON';
+        // });
+        //if we get a motor on off message, we should update the motorOnOff state to reflect the current state of the motor and send that to the ui
+        //this way the ui will always reflect the current state of the motor
+        setMotorOnOff(lastJsonMessage.motorOnOff);
+        broadcastMessageToUi(lastJsonMessage.motorOnOff);
       }
 
       if (lastJsonMessage.TD) {
@@ -998,7 +1003,7 @@ function App() {
                     </div>
 
                     <div className="ON-OFF">
-                      <div className='on-off-btn' onClick={e => { setMotorOnOff(motorOnOff === 'ON' ? 'OFF' : 'ON'); changeMotorOnOff() }}>
+                      <div className='on-off-btn' onClick={e => { setMotorOnOff(motorOnOff === 'ON' ? 'ON' : 'OFF'); changeMotorOnOff() }}>
                         <div className="overlap-groupOn">
                           {motorOnOff === 'ON' ? <img className="CURSEUR" alt="Curseur" src={require('./assets/CURSEUR.png')} /> : <img className="CURSEUR2" alt="Curseur" src={require('./assets/CURSEUR.png')} />}
                         </div>
